@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "dnDHpn+dgLZNgabTkeAnGWF/UzZTh5vma1SA2YE4goyCLJpglbkyL/14xYPj7wYKJdgAfiX+2Eegd7ohIdO0Rw==",
+  "success": false,
+  "projectFilePath": "C:\\dev\\Church\\Church.UTest\\Church.UTest.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "NUnit"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "NUnit3TestAdapter"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "NUnit.Analyzers"
+    }
+  ]
+}

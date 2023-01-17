@@ -1,0 +1,9 @@
+﻿using Church.Contexts.AccountContext.Entities;
+
+namespace Church.Contexts.AccountContext.UseCases.RequestPasswordResetCode.Contracts;
+
+public interface IRepository
+{
+    Task<bool> CheckAccountIsBlackListedAsync(string username);
+    Task<User?> GetUserByUsernameAsync(string username);
+}

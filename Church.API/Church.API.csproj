@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Church.Contexts.AccountContext\Church.Contexts.AccountContext.csproj" />
+      <ProjectReference Include="..\Church.Contexts.PersonContext\Church.Contexts.PersonContext.csproj" />
+      <ProjectReference Include="..\Church.Contexts.SharedContext\Church.Contexts.SharedContext.csproj" />
+      <ProjectReference Include="..\Church.Data\Church.Data.csproj" />
+    </ItemGroup>
+
+</Project>
