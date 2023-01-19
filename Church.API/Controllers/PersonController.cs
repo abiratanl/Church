@@ -45,7 +45,7 @@ public class PersonController : ControllerBase
     /// <param name="request"></param>
     /// <returns></returns>
     [AllowAnonymous]
-    [HttpPost("get-all")]
+    [HttpGet("get-all")]
     public async Task<BaseResponse<UCGet.ResponseData>> GetAllAsync(UCGet.Request request)
     {
         try
@@ -75,7 +75,7 @@ public class PersonController : ControllerBase
     }
     
     [AllowAnonymous]
-    [HttpDelete("edit/{id}")]
+    [HttpPut("edit/{id}")]
     public async Task<BaseResponse<UCEdit.ResponseData>> UpdateAsync(Guid id)
     {
         try

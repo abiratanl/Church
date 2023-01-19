@@ -7,9 +7,13 @@ C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Services.Google.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Services.Google.pdb
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\RestSharp.dll
+C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\SecureIdentity.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Contexts.SharedContext.dll
+C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Contexts.SharedContext.pdb
 C:\dev\Church\Church.Services.Google\obj\Debug\net7.0\Church.Services.Google.csproj.AssemblyReference.cache
 C:\dev\Church\Church.Services.Google\obj\Debug\net7.0\Church.Services.Google.GeneratedMSBuildEditorConfig.editorconfig
 C:\dev\Church\Church.Services.Google\obj\Debug\net7.0\Church.Services.Google.AssemblyInfoInputs.cache
@@ -31,7 +35,3 @@ C:\dev\Church\Church.Services.Google\obj\Debug\net7.0\refint\Church.Services.Goo
 C:\dev\Church\Church.Services.Google\obj\Debug\net7.0\Church.Services.Google.pdb
 C:\dev\Church\Church.Services.Google\obj\Debug\net7.0\Church.Services.Google.genruntimeconfig.cache
 C:\dev\Church\Church.Services.Google\obj\Debug\net7.0\ref\Church.Services.Google.dll
-C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\RestSharp.dll
-C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\SecureIdentity.dll
-C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Contexts.SharedContext.dll
-C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Contexts.SharedContext.pdb

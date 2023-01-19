@@ -1,11 +1,20 @@
+using Church.API;
+using Church.API.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.CustomSchemaIds(type => type.ToString());
+});
+
+builder.AddBaseConfiguration();
+builder.AddBaseServices();
+
+Context.ConfigureDataContext(builder.Services);
+Context.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 

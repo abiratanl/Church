@@ -1,7 +1,6 @@
 using Church.Contexts.AccountContext.Entities;
 using Church.Contexts.AccountContext.UseCases.Create.Contracts;
 using Church.Contexts.SharedContext.UseCases;
-using Church.Contexts.SharedContext.ValueObjects;
 using MediatR;
 using Church.Contexts.SharedContext.Enums;
 using ReCaptchaService = Church.Services.Google.ReCaptcha.Contracts.IService;
