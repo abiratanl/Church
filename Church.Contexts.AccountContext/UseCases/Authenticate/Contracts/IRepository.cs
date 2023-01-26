@@ -1,5 +1,5 @@
 using Church.Contexts.AccountContext.Entities;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.Repositories.Contracts;
 
 namespace Church.Contexts.AccountContext.UseCases.Authenticate.Contracts;

@@ -1,0 +1,30 @@
+{
+  "zipCode": "12506040",
+  "addressNumber": "200",
+  "complement": "Casa",
+  "district": "Centro",
+  "city": "Guaratinguetá",
+  "state": "SP",
+  "street": "Av. João Pessoa",
+  "country": "BZ",
+  "code": "",
+  "notes": "",
+  "documents": [
+    {
+      "number": "123456",
+      "type": 1
+    }
+  ],
+  "birthDate": "2023-01-25T19:36:28.758Z",
+  "nationality": "Brasileiro",
+  "citizenship": "João Pessoa - PB",
+  "gender": 1,
+  "firstName": "Fulado",
+  "lastName": "de Tal",
+  "obs": "",
+  "fullNumber": "+5512998254563",
+  "photo": "",
+  "fatherName": "José João",
+  "motherName": "Maria José",
+  "returnUrl": ""
+}

@@ -1,31 +1,59 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Church.Contexts.SharedContext.Enums;
+﻿using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.ValueObjects;
-using Church.Contexts.PersonContext.Entities;
 
 namespace Church.Contexts.MemberContext.Entities;
 
 
 public class Member : Entity
 {
-    [Required(ErrorMessage = "O campo pessoa é obrigatório!")]
-    public Person Person { get; set; }
-    [Required(ErrorMessage = "O campo congregação é obrigatório!")]
-    public Congregation CongregationId { get; set; }
-    [Required(ErrorMessage = "O campo cargo é obrigatório!")]
-    public ERole Role { get; set; }
-    public EStatus Status { get; set; }
-    public EMaritalStatus MaritalStatus { get; set; }
+    #region Constructors
+
+    /// <summary>
+    /// Create a new instance of Member with default configuration
+    /// </summary>
+    public Member(){}
+
+    public Member(Congregation congregation, List<Contact?> contacts, DateTime entryDate,
+                bool isBaptizedHolySpirit, bool isDeleted, EMaritalStatus maritalStatus,
+                List<Occurrence?> occorrences, Person person, ERole role, bool spouseIsBeliever,
+                string spouseName, EStatus status, Tracker tracker) 
+    {
+        Congregation = congregation;
+        EntryDate = entryDate;
+        IsBaptizedHolySpirit = isBaptizedHolySpirit;
+        IsDeleted = isDeleted;
+        MaritalStatus = maritalStatus;
+        Occorrences = occorrences;
+        Person = person;
+        Role = role;
+        SpouseIsBeliever = spouseIsBeliever;
+        SpouseName = spouseName;
+        Status = status;
+        Tracker = tracker;
+    }
+
+    #endregion
+
+    #region Public Properties
+    
+    public Congregation Congregation { get; private set; } = null!;
+    public List<Contact?> Contacts { get; set; } = null!;
+    public DateTime EntryDate { get; private set; }
+    public bool IsBaptizedHolySpirit { get; private set; }
     public bool IsDeleted { get; private set; }
-    public string? FatherName { get; set; }
-    public string? MotherName { get; set; }
-    public DateTime EntryDate { get; set; }
-    public string? SpouseName { get; set; }
-    public bool? SpouseIsBeliever { get; set; }
-    public bool BaptizedHolySpirit { get; set; }
-    public List<Occurrence?> Occorrencies { get; set; }
-    public Tracker Tracker { get; set; }
+    public EMaritalStatus MaritalStatus { get; private set; } = 0;
+    public Person Person { get; private set; } = null!;
+    public ERole Role { get; private set; } = 0;
+    public bool? SpouseIsBeliever { get; private set; } = false;
+    public string? SpouseName { get; private set; } = string.Empty;
+    public EStatus Status { get; private set; } = 0;
+    public Tracker Tracker { get; private set; } = null!;
+    public List<Occurrence?> Occorrences { get; private set; } = null!;
+    
+    #endregion
+
+    #region Methods
     
     public void ChangeInformation(EStatus status, ERole role)
     {
@@ -38,6 +66,8 @@ public class Member : Entity
         IsDeleted = true;
         Tracker.Update("Pessoa excluída.");
     }
+    
+    #endregion
 }
 
 

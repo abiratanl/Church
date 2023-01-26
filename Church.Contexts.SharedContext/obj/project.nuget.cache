@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "m+r7XKqDlFK65NrUUANpcCBl6YwNmSmpX6YFCjVMbC51O2a/wfROz//1HC9R3eKf0koP2n8k+W90tVLYxT8ydg==",
+  "dgSpecHash": "gIqoqyy8Wx/sOH8Pi7YTO97vd6G5Fs7N+VT3Jytit+nvuHP6IqzpXLkQp3qKZX+wZvltkZtIr1p/Y0FiFtJUPg==",
   "success": true,
   "projectFilePath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\abira\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.2\\microsoft.entityframeworkcore.abstractions.7.0.2.nupkg.sha512",
     "C:\\Users\\abira\\.nuget\\packages\\restsharp\\109.0.0-preview.1\\restsharp.109.0.0-preview.1.nupkg.sha512",
     "C:\\Users\\abira\\.nuget\\packages\\secureidentity\\1.0.4\\secureidentity.1.0.4.nupkg.sha512"
   ],

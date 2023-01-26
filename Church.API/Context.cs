@@ -16,7 +16,7 @@ public static class Context
             {
                 x.UseSqlServer(
                     Configuration.Database.ConnectionString,
-                    options => { options.MigrationsAssembly("OldCare.API"); });
+                    options => { options.MigrationsAssembly("Church.API"); });
             });
     }
 

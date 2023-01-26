@@ -7,10 +7,12 @@ C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Data.deps.json
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Data.dll
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Data.pdb
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.AccountContext.dll
+C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.MemberContext.dll
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.PersonContext.dll
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.SharedContext.dll
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Services.Google.dll
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.AccountContext.pdb
+C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.MemberContext.pdb
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.PersonContext.pdb
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.SharedContext.pdb
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Services.Google.pdb

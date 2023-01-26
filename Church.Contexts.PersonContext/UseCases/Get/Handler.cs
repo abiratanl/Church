@@ -1,4 +1,4 @@
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.PersonContext.UseCases.Get.Contracts;
 using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.Services.Log.Contracts;
@@ -54,7 +54,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
         
         #region Return Success Message
 
-        await _logService.LogAsync(ELogType.LocalApplicationEvent, "📃 Registros obtidos com sucesso", "Pessoas", null);
+        await _logService.LogAsync(ELogType.LocalApplicationEvent, "📃 Registros obtidos com sucesso", "Pessoas", "");
         return new BaseResponse<ResponseData>(new ResponseData($"Registros obtidos com sucesso.", persons), 201);
 
         #endregion

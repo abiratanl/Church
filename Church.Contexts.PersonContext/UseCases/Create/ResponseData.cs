@@ -1,5 +1,3 @@
-using Church.Contexts.PersonContext.Entities;
-
 using Church.Contexts.SharedContext.UseCases.Contracts;
 
 namespace Church.Contexts.PersonContext.UseCases.Create;

@@ -1,10 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Church.Contexts.SharedContext.Entities;
-using Church.Contexts.SharedContext.Enums;
+﻿using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.UseCases.Contracts;
 using Church.Contexts.SharedContext.ValueObjects;
 
-namespace Church.Contexts.PersonContext.Entities;
+namespace Church.Contexts.SharedContext.Entities;
 
 /// <summary>
 /// A entity to aggregate Person data
@@ -36,8 +34,12 @@ public class Person : Entity, IAggregateRoot
         DateTime? birthDate,
         string? citizenship,
         List<Document>? documents,
+        string fatherName,
         EGender gender,
+        bool isDeleted,
+        string motherName,
         Name name,
+        string nationality,
         string? obs,
         Phone? phone,
         string? photo)
@@ -46,8 +48,12 @@ public class Person : Entity, IAggregateRoot
         BirthDate = birthDate;
         Citizenship = citizenship;
         Documents = documents;
+        FatherName = fatherName;
         Gender = gender;
+        IsDeleted = isDeleted;
+        MotherName = motherName;
         Name = name ?? throw new ArgumentNullException(nameof(name));
+        Nationality = nationality;
         Obs = obs;
         Phone = phone;
         Photo = photo;
@@ -62,17 +68,16 @@ public class Person : Entity, IAggregateRoot
     public DateTime? BirthDate { get; private set; }
     public string? Citizenship { get; private set; }
     public List<Document>? Documents { get; private set; }
+    public string FatherName { get; private set; } = string.Empty;
     public EGender Gender { get; private set; }
     public bool IsDeleted { get; set; }
+    public string MotherName { get; private set; } = string.Empty;
     public Name Name { get; private set; }
     public string Nationality { get; set; }
     public string? Obs { get; private set; }
     public Phone? Phone { get; private set; }
     public string? Photo { get; private set; }
-    public string FatherName { get; private set; } = string.Empty;
-    public string MotherName { get; private set; } = string.Empty;
     public Tracker Tracker { get; } = null!;
-    [NotMapped]
     public int Age { get; set; }
 
     #endregion

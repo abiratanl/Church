@@ -1,7 +1,9 @@
 ﻿using Church.Contexts.AccountContext.Entities;
+using Church.Contexts.MemberContext.Entities;
 using Church.Data.Contexts.AccountContext.Mappings;
 using Microsoft.EntityFrameworkCore;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
+using Church.Data.Contexts.MemberContext.Mapping;
 using Church.Data.Contexts.PersonContext.Mappings;
 
 namespace Church.Data;
@@ -21,6 +23,13 @@ public class DataContext : DbContext
 
     #endregion
 
+    #region Member
+
+    public DbSet<Member> Members { get; set; } = null!;
+    public DbSet<Congregation> Congregations {get; set;} = null!;
+
+    #endregion
+
     #region Person
 
     public DbSet<Person> People { get; set; } = null!;
@@ -31,11 +40,18 @@ public class DataContext : DbContext
     {
         #region Account
 
-        builder.HasDefaultSchema("backoffice");
+        builder.HasDefaultSchema("adm");
         builder.ApplyConfiguration(new BlackListMap());
         builder.ApplyConfiguration(new UserMap());
         builder.ApplyConfiguration(new RoleMap());
         builder.ApplyConfiguration(new UserRoleMap());
+
+        #endregion
+
+        #region Member
+
+        builder.ApplyConfiguration(new CongregationMap());
+        builder.ApplyConfiguration(new MemberMap());
 
         #endregion
 

@@ -13,10 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1da09c70-7c1e-416c-88fd-73101155ed43" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Church.API/Church.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/Church.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.API/Controllers/PersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/Controllers/PersonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.API/appsettings.Development.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/ValueObjects/Occurrence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Church/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Church/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.API/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.API.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.API.pdb" afterDir="false" />
@@ -28,12 +28,12 @@
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Data.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Services.Google.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Services.Google.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Services.Google.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Services.Google.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Services.Google.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Church.Services.Google.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/bin/Debug/net7.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Church.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Church.API.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Church.API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Church.API.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.API/obj/Church.API.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Church.API.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.csproj.CoreCompileInputs.cache" afterDir="false" />
@@ -42,78 +42,160 @@
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/Church.API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/ref/Church.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/ref/Church.API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/refint/Church.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/refint/Church.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Church.API/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/Entities/Resident.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/Create/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/Create/Handler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/Edit/Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/Edit/Request.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/Edit/ResponseData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/ListResidents/Contracts/IRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/ListResidents/Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/ListResidents/Request.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/ListResidents/ResponseData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/Authenticate/Contracts/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/Authenticate/Contracts/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/ChangePassword/Contracts/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/UseCases/ChangePassword/Contracts/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.AccountContext.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.AccountContext.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.AccountContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.AccountContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.AccountContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.AccountContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Services.Google.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Services.Google.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Services.Google.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Services.Google.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Services.Google.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/bin/Debug/net7.0/Church.Services.Google.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Church.Contexts.AccountContext.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Church.Contexts.AccountContext.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/Church.Contexts.AccountContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/ref/Church.Contexts.AccountContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/ref/Church.Contexts.AccountContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/refint/Church.Contexts.AccountContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/Debug/net7.0/refint/Church.Contexts.AccountContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.AccountContext/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/Entities/Congregation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/Entities/Congregation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/Entities/Contact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/ValueObjects/Contact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/Entities/Member.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/Entities/Member.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/Entities/Occurrence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.MemberContext.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.MemberContext.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.MemberContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.MemberContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.MemberContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.MemberContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Church.Contexts.MemberContext.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Church.Contexts.MemberContext.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/Church.Contexts.MemberContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/ref/Church.Contexts.MemberContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/ref/Church.Contexts.MemberContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/refint/Church.Contexts.MemberContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/Debug/net7.0/refint/Church.Contexts.MemberContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.MemberContext/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/Entities/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/Entities/Person.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Create/Contracts/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Create/Contracts/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Create/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Create/Handler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Create/ResponseData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Create/ResponseData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Delete/Contracts/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Delete/Contracts/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Delete/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Delete/Handler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Edit/Contracts/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Edit/Contracts/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Edit/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Edit/Handler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Get/Contracts/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Get/Contracts/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Get/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Get/Handler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Get/ResponseData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/UseCases/Get/ResponseData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.PersonContext.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.PersonContext.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Church.Contexts.PersonContext.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Church.Contexts.PersonContext.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/Church.Contexts.PersonContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/ref/Church.Contexts.PersonContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/ref/Church.Contexts.PersonContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/refint/Church.Contexts.PersonContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/Debug/net7.0/refint/Church.Contexts.PersonContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.PersonContext/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/Church.Contexts.SharedContext.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/Church.Contexts.SharedContext.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EBrazilianStates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EBrazilianStates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EMaritalStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EMaritalStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EOccurrenceType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EOccurrenceType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/ERole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/ERole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/Enums/EStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/ValueObjects/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/ValueObjects/Address.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/bin/Debug/net7.0/Church.Contexts.SharedContext.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/bin/Debug/net7.0/Church.Contexts.SharedContext.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Church.Contexts.SharedContext.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Church.Contexts.SharedContext.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/ref/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/ref/Church.Contexts.SharedContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/refint/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/Debug/net7.0/refint/Church.Contexts.SharedContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Contexts.SharedContext/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/Church.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/Church.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/Mappings/PersonMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/Mappings/PersonMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Create/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Create/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Delete/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Delete/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Edit/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Edit/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Get/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/Contexts/PersonContext/UseCases/Get/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/DataContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.AccountContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.AccountContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.AccountContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.AccountContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.PersonContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.PersonContext.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Data.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Data.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Data.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Services.Google.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Services.Google.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Services.Google.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Services.Google.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Services.Google.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/bin/Debug/net7.0/Church.Services.Google.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/Church.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Church.Data.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/Church.Data.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Church.Data.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/Church.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/ref/Church.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/ref/Church.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/refint/Church.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/Debug/net7.0/refint/Church.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Data/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Contexts.SharedContext.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Contexts.SharedContext.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Services.Google.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Services.Google.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Services.Google.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Services.Google.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Services.Google.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/bin/Debug/net7.0/Church.Services.Google.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/Church.Services.Google.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/Church.Services.Google.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/Debug/net7.0/Church.Services.Google.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Church.Web/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTests/obj/Debug/net7.0/UTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UTests/obj/Debug/net7.0/UTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Services.Google/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Services.Google/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Web/bin/Debug/net7.0/Church.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Web/bin/Debug/net7.0/Church.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Web/bin/Debug/net7.0/Church.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Web/bin/Debug/net7.0/Church.Web.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Web/bin/Debug/net7.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Church.Web/obj/Debug/net7.0/Church.Web.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +220,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -295,11 +378,39 @@
       <workItem from="1673886555889" duration="9884000" />
       <workItem from="1673914654222" duration="59000" />
       <workItem from="1673954080360" duration="9489000" />
+      <workItem from="1674222645792" duration="11555000" />
+      <workItem from="1674252339015" duration="11510000" />
+      <workItem from="1674301949208" duration="755000" />
+      <workItem from="1674302765075" duration="920000" />
+      <workItem from="1674303941401" duration="1570000" />
+      <workItem from="1674472704583" duration="10476000" />
+      <workItem from="1674484678473" duration="12499000" />
+      <workItem from="1674502366507" duration="549000" />
+      <workItem from="1674502974044" duration="548000" />
+      <workItem from="1674503572056" duration="36000" />
+      <workItem from="1674643001855" duration="862000" />
+      <workItem from="1674643884541" duration="4040000" />
+      <workItem from="1674666353699" duration="6121000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="162" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 1% 3072/3074" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">

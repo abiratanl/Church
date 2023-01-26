@@ -1,5 +1,3 @@
-using Church.Contexts.AccountContext;
-using Church.Contexts.PersonContext.Entities;
 using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.Extensions;
 using Church.Contexts.SharedContext.UseCases.Contracts;

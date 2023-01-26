@@ -2,7 +2,7 @@
 
 namespace Church.Contexts.SharedContext.Enums;
 
-public enum EOccurrenceType
+public enum EOccurrenceType : byte
 {
     [Display(Name="Ingresso no rol de membros.")]
     MembershipEntry,

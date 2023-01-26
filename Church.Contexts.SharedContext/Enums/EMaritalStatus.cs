@@ -1,6 +1,6 @@
 ﻿namespace Church.Contexts.SharedContext.Enums;
 
-public enum EMaritalStatus
+public enum EMaritalStatus : byte
 {
     Single = 0,
     Married = 1,

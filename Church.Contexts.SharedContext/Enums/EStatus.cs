@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace Church.Contexts.SharedContext.Enums;
-public enum EStatus
+public enum EStatus : byte
 {
-    [Display(Name="Afastado da Comunhão")]
-    RemovedFromCommunion = 0,
     [Display(Name="Ativo")]
-    Active = 1,
+    Active = 0,
+    [Display(Name="Afastado da Comunhão")]
+    RemovedFromCommunion = 1,
     [Display(Name="Desligado - Abandono")]
     DisconnectedForAbandonment = 2,
     [Display(Name="Desligado a Pedido")]

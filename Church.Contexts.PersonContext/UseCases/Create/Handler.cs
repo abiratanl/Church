@@ -1,6 +1,6 @@
 using Church.Contexts.SharedContext.UseCases;
 using MediatR;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.PersonContext.UseCases.Create.Contracts;
 using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.ValueObjects;
@@ -43,7 +43,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 
         if (result)
         {
-            await _logService.LogAsync(ELogType.LocalException, $"👥 {request.FirstName} {request.LastName} - Pessoa já cadastrada", "E52D25DC", null);
+            await _logService.LogAsync(ELogType.LocalException, $"👥 {request.FirstName} {request.LastName} - Pessoa já cadastrada", "E52D25DC");
             return new BaseResponse<ResponseData>("Pessoa já cadastrada.", "e52d25dc");
         }
 
@@ -55,7 +55,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
         {
             person.ChangeName(request.FirstName, request.LastName);
         }
-        catch (Exception ex)
+        catch
         {
             await _logService.LogAsync(ELogType.LocalException, $"❌ {request.FirstName} {request.FirstName} Não foi possível salvar o nome.", "1fa4222b");
             return new BaseResponse<ResponseData>("Não foi possível salvar o nome.", "1fa4222b");
@@ -87,7 +87,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
         {
             // person.AddDocuments(request.Documents);
         }
-        catch (Exception ex)
+        catch
         {
             return new BaseResponse<ResponseData>("Não foi possível salvar os documentos.", "7d2f89cb");
         }

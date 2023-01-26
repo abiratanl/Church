@@ -2,7 +2,7 @@
 
 namespace Church.Contexts.SharedContext.Enums;
 
-public enum ERole
+public enum ERole : byte
 {
     [Display(Name="Diácono")]
     Deacon = 0,

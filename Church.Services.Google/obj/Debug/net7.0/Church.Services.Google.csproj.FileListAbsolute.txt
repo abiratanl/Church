@@ -6,6 +6,7 @@ C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Services.Google.run
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Services.Google.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Church.Services.Google.pdb
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\RestSharp.dll
 C:\dev\Church\Church.Services.Google\bin\Debug\net7.0\SecureIdentity.dll

@@ -57,5 +57,7 @@ public enum EBrazilianStates
     [Display(Name = "Sergipe")]
     SE = 26,
     [Display(Name = "Tocantins")]
-    TO = 27
+    TO = 27,
+    [Display(Name = "Exterior")]
+    EX = 28
 }
