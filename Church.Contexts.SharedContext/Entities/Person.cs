@@ -68,10 +68,10 @@ public class Person : Entity, IAggregateRoot
     public DateTime? BirthDate { get; private set; }
     public string? Citizenship { get; private set; }
     public List<Document>? Documents { get; private set; }
-    public string FatherName { get; private set; } = string.Empty;
+    public string? FatherName { get; private set; } = string.Empty;
     public EGender Gender { get; private set; }
     public bool IsDeleted { get; set; }
-    public string MotherName { get; private set; } = string.Empty;
+    public string? MotherName { get; private set; } = string.Empty;
     public Name Name { get; private set; }
     public string Nationality { get; set; }
     public string? Obs { get; private set; }
@@ -102,13 +102,17 @@ public class Person : Entity, IAggregateRoot
     public void ChangeInformation(
         DateTime? birthDate,
         string citizenship,
+        string fatherName,
         EGender gender,
+        string motherName,
         string nationality,
         string obs)
     {
         BirthDate = birthDate;
         Citizenship = citizenship;
+        FatherName = fatherName;
         Gender = gender;
+        MotherName = motherName;
         Nationality = nationality;
         Obs = obs;
 

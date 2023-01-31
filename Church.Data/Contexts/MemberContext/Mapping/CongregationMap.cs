@@ -12,7 +12,7 @@ public class CongregationMap : IEntityTypeConfiguration<Congregation>
         builder.ToTable("Congregation");
         
         builder.HasKey(x => x.Id);
-        
+
         builder.HasOne(x => x.Address);
         
         builder.OwnsOne(x => x.Address)
@@ -66,13 +66,6 @@ public class CongregationMap : IEntityTypeConfiguration<Congregation>
             .HasColumnType("NVARCHAR");
         
         builder.Property(x => x.FundationDate)
-            .HasColumnType("SMALLDATETIME");
-
-        builder.Property(x => x.Leader)
-            .IsRequired()
-            .HasColumnType("UNIQUEIDENTIFIER");
-        
-        builder.Property(x => x.LeaderExchangeDate)
             .HasColumnType("SMALLDATETIME");
         
         builder.Property(x => x.Name)

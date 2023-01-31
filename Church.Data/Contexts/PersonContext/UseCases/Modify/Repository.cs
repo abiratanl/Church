@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Church.Contexts.SharedContext.Entities;
-using Church.Contexts.PersonContext.UseCases.Edit.Contracts;
+using Church.Contexts.PersonContext.UseCases.Modify.Contracts;
 
-namespace Church.Data.Contexts.PersonContext.UseCases.Edit;
+namespace Church.Data.Contexts.PersonContext.UseCases.Modify;
 
 public class Repository : IRepository
 {
@@ -28,7 +28,6 @@ public class Repository : IRepository
 
     public async Task UpdateAsync(Person person)
     {
-       // person.IsDeleted = true;
         _context.People.Update(person);
         await _context.SaveChangesAsync();
     }

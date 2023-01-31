@@ -1,8 +1,8 @@
 ﻿using Church.Contexts.SharedContext.UseCases.Contracts;
 
-namespace Church.Contexts.PersonContext.UseCases.Edit;
+namespace Church.Contexts.MemberContext.UseCases.Create;
 
-public class ResponseData : IResponseData
+public class ResponseData :IResponseData
 {
     #region Constructors
 
@@ -14,13 +14,12 @@ public class ResponseData : IResponseData
         Request = request;
     }
 
-
     #endregion
 
     #region Public Properties
 
-    public string Message { get; }
-    public Request  Request { get; }    
+    public string  Message { get; }
+    public Request Request { get; }
 
     #endregion
 }

@@ -96,9 +96,15 @@ public static class Context
                 Data.Contexts.PersonContext.UseCases.Delete.Repository>();
         
         services
-            .AddTransient<Contexts.PersonContext.UseCases.Edit.Contracts.IRepository,
-                Data.Contexts.PersonContext.UseCases.Edit.Repository>();
+            .AddTransient<Contexts.PersonContext.UseCases.Modify.Contracts.IRepository,
+                Data.Contexts.PersonContext.UseCases.Modify.Repository>();
         
+        #endregion
+
+        #region ResidentContext
+
+        
+
         #endregion
     }
 }

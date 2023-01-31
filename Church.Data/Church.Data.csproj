@@ -18,8 +18,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Contexts\MemberContext\UseCases\Create" />
-      <Folder Include="Contexts\MemberContext\UseCases\Delete" />
       <Folder Include="Contexts\MemberContext\UseCases\Edit" />
       <Folder Include="Contexts\MemberContext\UseCases\Get" />
     </ItemGroup>

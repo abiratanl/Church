@@ -14,7 +14,8 @@ public class Repository : IRepository
 
     #region Constructors
 
-    public Repository(DataContext context) => _context = context;
+    public Repository(DataContext context)
+        => _context = context;
 
     #endregion
 
@@ -28,7 +29,7 @@ public class Repository : IRepository
 
     public async Task UpdateAsync(Person person)
     {
-        person.IsDeleted = true;
+        person.Delete();
         _context.People.Update(person);
         await _context.SaveChangesAsync();
     }

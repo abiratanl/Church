@@ -1,6 +1,13 @@
-﻿namespace Church.Contexts.MemberContext.UseCases.Delete.Contracts;
+﻿using Church.Contexts.MemberContext.Entities;
 
-public interface Repository
+namespace Church.Contexts.MemberContext.UseCases.Delete.Contracts;
+
+public interface IRepository
 {
-    
+    /// <summary>
+    /// Delete a member updating IsDelete property to true
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task UpdateAsing(Member member);
 }

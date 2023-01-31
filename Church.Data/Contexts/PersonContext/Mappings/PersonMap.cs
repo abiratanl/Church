@@ -86,6 +86,7 @@ public class PersonMap : IEntityTypeConfiguration<Person>
             .HasColumnType("NVARCHAR");
 
         builder.Property(x => x.FatherName)
+            .IsRequired(false)
             .HasMaxLength(160)
             .HasColumnType("NVARCHAR");
 
@@ -111,6 +112,7 @@ public class PersonMap : IEntityTypeConfiguration<Person>
             .HasColumnType("NVARCHAR");
 
         builder.Property(x => x.MotherName)
+            .IsRequired(false)
             .HasMaxLength(160)
             .HasColumnType("NVARCHAR");
 
@@ -149,6 +151,8 @@ public class PersonMap : IEntityTypeConfiguration<Person>
             .HasColumnType("DATETIME2");
         
         builder.Property(x => x.Photo)
+            .IsRequired(false)
+            .HasMaxLength(160)
             .HasColumnType("NVARCHAR");
 
         builder.OwnsOne(x => x.Tracker)

@@ -41,7 +41,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 
         try
         {
-            persons = await _repository.GetAll(request.Skip, request.Take);
+            persons = await _repository.GetAllAsync(request.Skip, request.Take);
         }
         catch (Exception ex)
         {

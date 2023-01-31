@@ -14,8 +14,6 @@ public class MemberMap : IEntityTypeConfiguration<Member>
         builder.HasKey(x => x.Id);
 
         builder.HasOne(x => x.Person);
-
-        builder.HasOne(x => x.Congregation);
         
         builder.Property(x => x.EntryDate)
             .HasColumnType("SMALLDATETIME");

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Church.Contexts.SharedContext.UseCases;
 using UCCreate = Church.Contexts.PersonContext.UseCases.Create;
 using UCDelete = Church.Contexts.PersonContext.UseCases.Delete;
-using UCEdit = Church.Contexts.PersonContext.UseCases.Edit;
+using UCEdit = Church.Contexts.PersonContext.UseCases.Modify;
 using UCGet = Church.Contexts.PersonContext.UseCases.Get;
 
 namespace OldCare.API.Controllers;
@@ -45,7 +45,7 @@ public class PersonController : ControllerBase
     /// <param name="request"></param>
     /// <returns></returns>
     [AllowAnonymous]
-    [HttpGet("get-all")]
+    [HttpPost("get-all")]
     public async Task<BaseResponse<UCGet.ResponseData>> GetAllAsync(UCGet.Request request)
     {
         try

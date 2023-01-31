@@ -1,7 +1,7 @@
 ﻿using Church.Contexts.SharedContext.UseCases;
 using MediatR;
 
-namespace Church.Contexts.PersonContext.UseCases.Edit;
+namespace Church.Contexts.PersonContext.UseCases.Modify;
 
 public class Request : IRequest<BaseResponse<ResponseData>>
 {

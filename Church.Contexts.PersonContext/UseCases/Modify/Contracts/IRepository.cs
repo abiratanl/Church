@@ -1,6 +1,6 @@
 ﻿using Church.Contexts.SharedContext.Entities;
 
-namespace Church.Contexts.PersonContext.UseCases.Edit.Contracts;
+namespace Church.Contexts.PersonContext.UseCases.Modify.Contracts;
 
 public interface IRepository
 {

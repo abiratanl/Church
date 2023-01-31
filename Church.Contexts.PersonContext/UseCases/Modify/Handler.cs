@@ -1,11 +1,11 @@
 ﻿using Church.Contexts.SharedContext.Entities;
-using Church.Contexts.PersonContext.UseCases.Edit.Contracts;
+using Church.Contexts.PersonContext.UseCases.Modify.Contracts;
 using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.UseCases;
 using LogService = Church.Contexts.SharedContext.Services.Log.Contracts.IService;
 using MediatR;
 
-namespace Church.Contexts.PersonContext.UseCases.Edit;
+namespace Church.Contexts.PersonContext.UseCases.Modify;
 
 public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 {
@@ -54,9 +54,16 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 
         #endregion
 
-        #region 04. Mark Person as deleted
+        #region 04. Change Personal Data
 
-        person.Delete();
+        try
+        {
+            person.IsDeleted = true;
+        }
+        catch
+        {
+            return new BaseResponse<ResponseData>("Não foi possível salvar as informações pessoais.", "d91cdebc");
+        }
 
         #endregion
 

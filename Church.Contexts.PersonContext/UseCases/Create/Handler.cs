@@ -70,7 +70,9 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
             person.ChangeInformation(
                 request.BirthDate,
                 request.Citizenship,
+                request.FatherName,
                 request.Gender,
+                request.MotherName,
                 request.Nationality,
                 request.Obs);
         }
@@ -106,15 +108,15 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
         try
         {
             Address address = new(
-                request.ZipCode,
-                request.Street,
-                request.AddressNumber,
-                request.District,
                 request.City,
+                request.District,
+                request.Number,
                 request.State,
-                request.Country,
-                request.Complement,
+                request.Street,
+                request.ZipCode,
                 request.Code,
+                request.Complement,
+                request.Country,
                 request.Notes);
 
             person.ChangeAddress(address);

@@ -25,8 +25,9 @@ public class DataContext : DbContext
 
     #region Member
 
-    public DbSet<Member> Members { get; set; } = null!;
     public DbSet<Congregation> Congregations {get; set;} = null!;
+    public DbSet<Member> Members { get; set; } = null!;
+    public DbSet<Leader> Leaders { get; set; } = null!;
 
     #endregion
 
@@ -52,6 +53,7 @@ public class DataContext : DbContext
 
         builder.ApplyConfiguration(new CongregationMap());
         builder.ApplyConfiguration(new MemberMap());
+        builder.ApplyConfiguration(new LeaderMap());
 
         #endregion
 

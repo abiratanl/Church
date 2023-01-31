@@ -12,21 +12,25 @@ public class Congregation : Entity
     /// <summary>
     /// Create a new instance of Congregation with default configuration
     /// </summary>
-    protected Congregation(){}
-    
+    public Congregation()
+    {
+    }
+
     /// <summary>
-    /// 
+    /// Create a new instance of Congregation with defined configuration
     /// </summary>
     /// <param name="address"></param>
     /// <param name="fundationDate"></param>
     /// <param name="leader"></param>
     /// <param name="leaderExchangeDate"></param>
     /// <param name="name"></param>
-    public Congregation(Address address, DateTime fundationDate,
-                       Guid leader, DateTime leaderExchangeDate,
-                       string name) =>
-        (Address, FundationDate, Leader, LeaderExchangeDate, Name) =
-        (address, fundationDate, leader, leaderExchangeDate, name);
+    public Congregation(Address address,
+        DateTime fundationDate, IEnumerable<Member>? members)
+    {
+        Address = address;
+        FundationDate = fundationDate;
+        Members = members;
+    }
        
     #endregion
 
@@ -34,24 +38,18 @@ public class Congregation : Entity
 
     public Address Address { get; private set; } = null!;
     public DateTime FundationDate { get; private set; }
-    public Guid Leader { get; private set; } = Guid.Empty;
-    public DateTime LeaderExchangeDate { get; private set; }
     public string Name { get; private set; } = String.Empty;
-    public List<Member?> Members { get; private set; } = null!;
+    public IEnumerable<Member>? Members { get;}
     
     #endregion
 
-    #region Methods
+    #region Public Methods
 
-    public void ChangeInformation(DateTime fundationDate,
-        Guid leader, DateTime leaderExchangeDate, string name) =>
+    public void ChangeInformation(DateTime fundationDate, string name) =>
 
         (FundationDate, Name) = (fundationDate, name);
     
     public void ChangeAddress(Address address) => Address = address;
-
-    public void ChangeLeader(Guid leader, DateTime leaderExchangeDate) =>
-        (Leader, LeaderExchangeDate) = (leader, leaderExchangeDate);
 
     #endregion
 }

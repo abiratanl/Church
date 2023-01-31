@@ -110,12 +110,6 @@ namespace Church.API.Migrations
                     b.Property<DateTime>("FundationDate")
                         .HasColumnType("SMALLDATETIME");
 
-                    b.Property<Guid>("Leader")
-                        .HasColumnType("UNIQUEIDENTIFIER");
-
-                    b.Property<DateTime>("LeaderExchangeDate")
-                        .HasColumnType("SMALLDATETIME");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(160)
@@ -126,13 +120,40 @@ namespace Church.API.Migrations
                     b.ToTable("Congregation", "adm");
                 });
 
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CongregationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("Datetime");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("Datetime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CongregationId");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("Leader", "adm");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CongregationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("EntryDate")
@@ -186,7 +207,6 @@ namespace Church.API.Migrations
                         .HasColumnType("NVARCHAR");
 
                     b.Property<string>("FatherName")
-                        .IsRequired()
                         .HasMaxLength(160)
                         .HasColumnType("NVARCHAR");
 
@@ -198,7 +218,6 @@ namespace Church.API.Migrations
                         .HasColumnName("IsDeleted");
 
                     b.Property<string>("MotherName")
-                        .IsRequired()
                         .HasMaxLength(160)
                         .HasColumnType("NVARCHAR");
 
@@ -212,6 +231,7 @@ namespace Church.API.Migrations
                         .HasColumnType("NVARCHAR");
 
                     b.Property<string>("Photo")
+                        .HasMaxLength(160)
                         .HasColumnType("NVARCHAR");
 
                     b.HasKey("Id");
@@ -471,13 +491,30 @@ namespace Church.API.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
                 {
                     b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
-                        .WithMany("Members")
+                        .WithMany()
                         .HasForeignKey("CongregationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
+                        .WithMany()
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Congregation");
+
+                    b.Navigation("Member");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
+                {
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", null)
+                        .WithMany("Members")
+                        .HasForeignKey("CongregationId");
 
                     b.HasOne("Church.Contexts.SharedContext.Entities.Person", "Person")
                         .WithMany()
@@ -562,8 +599,6 @@ namespace Church.API.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("MemberId");
                         });
-
-                    b.Navigation("Congregation");
 
                     b.Navigation("Contacts");
 

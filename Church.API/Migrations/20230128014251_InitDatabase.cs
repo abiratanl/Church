@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Church.API.Migrations
 {
     /// <inheritdoc />
-    public partial class DatabaseInit : Migration
+    public partial class InitDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,8 +45,6 @@ namespace Church.API.Migrations
                     Street = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
                     ZipCode = table.Column<string>(type: "NVARCHAR(20)", maxLength: 20, nullable: false),
                     FundationDate = table.Column<DateTime>(type: "SMALLDATETIME", nullable: false),
-                    Leader = table.Column<Guid>(type: "UNIQUEIDENTIFIER", nullable: false),
-                    LeaderExchangeDate = table.Column<DateTime>(type: "SMALLDATETIME", nullable: false),
                     Name = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false)
                 },
                 constraints: table =>
@@ -72,10 +70,10 @@ namespace Church.API.Migrations
                     ZipCode = table.Column<string>(type: "NVARCHAR(20)", maxLength: 20, nullable: false),
                     BirthDate = table.Column<DateTime>(type: "DATETIME2", nullable: true),
                     Citizenship = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: true),
-                    FatherName = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
+                    FatherName = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: true),
                     Gender = table.Column<int>(type: "INT", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    MotherName = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
+                    MotherName = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: true),
                     FirstName = table.Column<string>(type: "NVARCHAR(60)", maxLength: 60, nullable: false),
                     LastName = table.Column<string>(type: "NVARCHAR(60)", maxLength: 60, nullable: false),
                     Nationality = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
@@ -84,7 +82,7 @@ namespace Church.API.Migrations
                     PhoneVerificationIsVerified = table.Column<bool>(name: "Phone_Verification_IsVerified", type: "BIT", nullable: true),
                     PhoneVerificationCode = table.Column<string>(name: "Phone_Verification_Code", type: "CHAR(6)", maxLength: 6, nullable: true),
                     PhoneVerificationCodeExpireDate = table.Column<DateTime>(name: "Phone_Verification_CodeExpireDate", type: "DATETIME2", nullable: true),
-                    Photo = table.Column<string>(type: "NVARCHAR", nullable: true),
+                    Photo = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: true),
                     TrackerCreatedAt = table.Column<DateTime>(name: "Tracker_CreatedAt", type: "SMALLDATETIME", nullable: false),
                     TrackerUpdatedAt = table.Column<DateTime>(name: "Tracker_UpdatedAt", type: "SMALLDATETIME", nullable: false),
                     TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false)
@@ -135,7 +133,6 @@ namespace Church.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CongregationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EntryDate = table.Column<DateTime>(type: "SMALLDATETIME", nullable: false),
                     IsBaptizedHolySpirit = table.Column<bool>(type: "BIT", nullable: false),
                     IsDeleted = table.Column<bool>(type: "BIT", nullable: false),
@@ -147,7 +144,8 @@ namespace Church.API.Migrations
                     Status = table.Column<byte>(type: "TINYINT", nullable: false),
                     TrackerCreatedAt = table.Column<DateTime>(name: "Tracker_CreatedAt", type: "SMALLDATETIME", nullable: false),
                     TrackerUpdatedAt = table.Column<DateTime>(name: "Tracker_UpdatedAt", type: "SMALLDATETIME", nullable: false),
-                    TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false)
+                    TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false),
+                    CongregationId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -157,8 +155,7 @@ namespace Church.API.Migrations
                         column: x => x.CongregationId,
                         principalSchema: "adm",
                         principalTable: "Congregation",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Member_Person_PersonId",
                         column: x => x.PersonId,
@@ -222,6 +219,36 @@ namespace Church.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Leader",
+                schema: "adm",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CongregationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "Datetime", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "Datetime", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Leader", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Leader_Congregation_CongregationId",
+                        column: x => x.CongregationId,
+                        principalSchema: "adm",
+                        principalTable: "Congregation",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Leader_Member_MemberId",
+                        column: x => x.MemberId,
+                        principalSchema: "adm",
+                        principalTable: "Member",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Occurrence",
                 schema: "adm",
                 columns: table => new
@@ -276,6 +303,18 @@ namespace Church.API.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Leader_CongregationId",
+                schema: "adm",
+                table: "Leader",
+                column: "CongregationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Leader_MemberId",
+                schema: "adm",
+                table: "Leader",
+                column: "MemberId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Member_CongregationId",
                 schema: "adm",
                 table: "Member",
@@ -319,6 +358,10 @@ namespace Church.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Document",
+                schema: "adm");
+
+            migrationBuilder.DropTable(
+                name: "Leader",
                 schema: "adm");
 
             migrationBuilder.DropTable(
