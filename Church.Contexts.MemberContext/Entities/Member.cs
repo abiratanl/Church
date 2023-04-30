@@ -2,7 +2,6 @@
 using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.ValueObjects;
-using Church.Contexts.PersonContext.Entities;
 
 namespace Church.Contexts.MemberContext.Entities;
 

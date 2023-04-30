@@ -1,4 +1,4 @@
-﻿using Church.Contexts.PersonContext.Entities;
+﻿using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.ValueObjects;
 
 namespace Church.Contexts.PersonContext.UseCases.Create.Contracts;

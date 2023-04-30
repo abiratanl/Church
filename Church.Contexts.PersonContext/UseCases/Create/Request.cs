@@ -1,7 +1,7 @@
 using Church.Contexts.SharedContext.UseCases;
 using MediatR;
-using Church.Contexts.SharedContext.ValueObjects;
 using Church.Contexts.SharedContext.Enums;
+using Church.Contexts.SharedContext.Entities;
 
 namespace Church.Contexts.PersonContext.UseCases.Create;
 

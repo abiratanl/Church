@@ -14,4 +14,8 @@
       <ProjectReference Include="..\Church.Contexts.SharedContext\Church.Contexts.SharedContext.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Entities\" />
+    </ItemGroup>
+
 </Project>

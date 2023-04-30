@@ -10,6 +10,7 @@
         "dependencies": {
           "Church.Contexts.AccountContext": "1.0.0",
           "Church.Contexts.PersonContext": "1.0.0",
+          "Church.Contexts.SharedContext": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Stenn.EntityFrameworkCore.SqlServer": "7.8.48"
         },

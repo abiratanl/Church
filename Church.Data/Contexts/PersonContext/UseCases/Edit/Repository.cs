@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.PersonContext.UseCases.Edit.Contracts;
 
 namespace Church.Data.Contexts.PersonContext.UseCases.Edit;

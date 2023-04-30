@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Church.Contexts.AccountContext.UseCases.Details.Models;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.UseCases.Contracts;
-using Church.Contexts.SharedContext.ValueObjects;
 
 namespace Church.Contexts.AccountContext.UseCases.Details;
 

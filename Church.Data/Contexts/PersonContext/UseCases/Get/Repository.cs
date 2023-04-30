@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.PersonContext.UseCases.Get.Contracts;
 using Church.Contexts.SharedContext.ValueObjects;
 

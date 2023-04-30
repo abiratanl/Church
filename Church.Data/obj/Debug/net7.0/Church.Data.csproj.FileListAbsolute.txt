@@ -1,3 +1,8 @@
+C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.csproj.AssemblyReference.cache
+C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.AssemblyInfoInputs.cache
+C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.AssemblyInfo.cs
+C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.csproj.CoreCompileInputs.cache
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Services.Google.deps.json
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Services.Google.runtimeconfig.json
 C:\dev\Church\Church.Data\bin\Debug\net7.0\appsettings.Development.json
@@ -14,11 +19,6 @@ C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.AccountContext.pdb
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.PersonContext.pdb
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.SharedContext.pdb
 C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Services.Google.pdb
-C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.csproj.AssemblyReference.cache
-C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.GeneratedMSBuildEditorConfig.editorconfig
-C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.AssemblyInfoInputs.cache
-C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.AssemblyInfo.cs
-C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.csproj.CoreCompileInputs.cache
 C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.csproj.CopyComplete
 C:\dev\Church\Church.Data\obj\Debug\net7.0\Church.Data.dll
 C:\dev\Church\Church.Data\obj\Debug\net7.0\refint\Church.Data.dll

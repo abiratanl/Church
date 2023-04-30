@@ -1,4 +1,4 @@
-﻿using Church.Contexts.PersonContext.Entities;
+﻿using Church.Contexts.SharedContext.Entities;
 
 namespace Church.Contexts.PersonContext.UseCases.Delete.Contracts;
 

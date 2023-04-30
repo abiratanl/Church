@@ -1,4 +1,4 @@
-﻿using Church.Contexts.SharedContext.ValueObjects;
+﻿using Church.Contexts.SharedContext.Entities;
 
 namespace Church.Contexts.AccountContext.UseCases.Details.Models;
 

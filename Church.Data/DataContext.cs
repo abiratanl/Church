@@ -1,7 +1,7 @@
 ﻿using Church.Contexts.AccountContext.Entities;
 using Church.Data.Contexts.AccountContext.Mappings;
 using Microsoft.EntityFrameworkCore;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Data.Contexts.PersonContext.Mappings;
 
 namespace Church.Data;
@@ -24,6 +24,7 @@ public class DataContext : DbContext
     #region Person
 
     public DbSet<Person> People { get; set; } = null!;
+    public DbSet<Document> Documents { get; set; }
 
     #endregion
 
@@ -42,6 +43,7 @@ public class DataContext : DbContext
         #region Person
 
         builder.ApplyConfiguration(new PersonMap());
+        builder.ApplyConfiguration(new DocumentMap());
 
         #endregion
     }

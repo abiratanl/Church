@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.PersonContext.UseCases.Delete.Contracts;
 using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.UseCases;

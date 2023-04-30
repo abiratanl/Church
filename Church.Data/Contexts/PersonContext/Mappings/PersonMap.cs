@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Church.Contexts.PersonContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 
 namespace Church.Data.Contexts.PersonContext.Mappings;
 
@@ -107,7 +107,7 @@ public class PersonMap : IEntityTypeConfiguration<Person>
             .HasMaxLength(160)
             .HasColumnType("NVARCHAR");
 
-        builder.OwnsMany(x => x.Documents);
+        //builder.OwnsMany(x => x.Documents);
 
         builder.Property(x => x.Gender)
             .IsRequired()
