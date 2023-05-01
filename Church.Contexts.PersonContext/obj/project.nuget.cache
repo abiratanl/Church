@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U0GtgOlYsH+FP6+oa28qGoTPGSDZa5ZC3jiEn5XU+CU7v/rLsd6VXuGYQwZrPm4GxNeIQPRTHJK8/A2aRu40Ug==",
+  "dgSpecHash": "o7jl0CcCVqzPduafBXmXrI+CnppfM5waF5HqDLvAhz3fRxaTkRrqe/EEoXXE4hAY66b5xtiIky/gD2wuwYCPJg==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj",
+  "projectFilePath": "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abilo\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
     "C:\\Users\\abilo\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

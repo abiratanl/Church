@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Church.Contexts.AccountContext\Church.Contexts.AccountContext.csproj" />
+      <ProjectReference Include="..\Church.Contexts.MemberContext\Church.Contexts.MemberContext.csproj" />
       <ProjectReference Include="..\Church.Contexts.PersonContext\Church.Contexts.PersonContext.csproj" />
       <ProjectReference Include="..\Church.Contexts.SharedContext\Church.Contexts.SharedContext.csproj" />
     </ItemGroup>

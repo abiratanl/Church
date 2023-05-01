@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bGHZeYtANei67rX2PQdAHIhfBCZWj14w39fpHwtE57X7YpGOwFVjA64ud2jv253Qx6DNZO7g2YDimRzFJhODQg==",
+  "dgSpecHash": "2wRW5KYD+35ZqN8JgAQtQaqnujN6G8SzhC7GjjX//olRoXVTlPlk2ubbtaeHnjatzxG0SR1n/bSQVIpcfW8CmA==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Church\\Church.Data\\Church.Data.csproj",
+  "projectFilePath": "C:\\Backup\\Church\\Church.Data\\Church.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abilo\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\abilo\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

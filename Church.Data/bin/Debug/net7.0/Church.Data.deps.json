@@ -9,6 +9,7 @@
       "Church.Data/1.0.0": {
         "dependencies": {
           "Church.Contexts.AccountContext": "1.0.0",
+          "Church.Contexts.MemberContext": "1.0.0",
           "Church.Contexts.PersonContext": "1.0.0",
           "Church.Contexts.SharedContext": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.2",
@@ -740,6 +741,15 @@
           "Church.Contexts.AccountContext.dll": {}
         }
       },
+      "Church.Contexts.MemberContext/1.0.0": {
+        "dependencies": {
+          "Church.Contexts.PersonContext": "1.0.0",
+          "Church.Contexts.SharedContext": "1.0.0"
+        },
+        "runtime": {
+          "Church.Contexts.MemberContext.dll": {}
+        }
+      },
       "Church.Contexts.PersonContext/1.0.0": {
         "dependencies": {
           "Church.Contexts.SharedContext": "1.0.0",
@@ -1337,6 +1347,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "Church.Contexts.AccountContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Church.Contexts.MemberContext/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

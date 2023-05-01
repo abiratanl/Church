@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5QX56NgHsVPhn0dSih5A/bNGNlMTNZxJ3c7E5nTX2TJWZe40CKLusKH0WMNiR8tdeliuqKJ4KC/kRZGIqn4ziQ==",
+  "dgSpecHash": "7aNOuakiz+9XzrtH3/H5ABZtS+hApl0kjP/uHjQYjIPGYroupnPS83/dLMb6OCgctIDhBfbczXt3szrNL+93CA==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Church\\UTests\\UTests.csproj",
+  "projectFilePath": "C:\\Backup\\Church\\UTests\\UTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abilo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\abilo\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

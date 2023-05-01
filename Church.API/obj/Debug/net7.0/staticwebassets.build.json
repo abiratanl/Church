@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "Vx5jFYHXOhy5JkGxVOl3iXVN8VkAx+fKM3hZcOLlIQE=",
+  "Hash": "Gki9z5rRfKKtc4pc2lS5thQZ/HmAH8/diTiJxyqP2Ec=",
   "Source": "Church.API",
   "BasePath": "_content/Church.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\dev\\Church\\Church.Services.Google\\Church.Services.Google.csproj",
+      "Identity": "C:\\Backup\\Church\\Church.Services.Google\\Church.Services.Google.csproj",
       "Version": 2,
       "Source": "Church.Services.Google",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

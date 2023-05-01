@@ -20,18 +20,14 @@ public class Congregation : Entity
         Name = name;
     }
     
-    [Display(Name = "Endereço")]
-    public Address Address { get; private set; } = null!;
-    [Display(Name = "Data da Fundação")]
-    public DateTime? FundationDate { get; private set; } = null!;
-    [Display(Name = "Dirigente")]
-    public string Leader { get; private set; } = String.Empty;
-
-    [Display(Name = "Data Mudança Dirigente")]
-    public DateTime? LeaderExchangeDate { get; private set; } = null!;
-    [Display(Name = "Nome da Congregação")]
-    public string Name { get; private set; } = String.Empty;
     
+    public Address Address { get; private set; } = null!;
+    public DateTime? FundationDate { get; private set; } = null!;
+    public string Leader { get; private set; } = String.Empty;
+    public DateTime? LeaderExchangeDate { get; private set; } = null!;
+    public string Name { get; private set; } = String.Empty;
+    public List<Member> Members { get; set; }
+
     public void ChangeInformation(DateTime? fundationDate, string leader, DateTime leaderExchangeDate, string name)
     {
         FundationDate = fundationDate;

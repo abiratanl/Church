@@ -22,8 +22,9 @@ public class Member : Entity
     public DateTime EntryDate { get; set; }
     public string? SpouseName { get; set; }
     public bool? SpouseIsBeliever { get; set; }
-    public bool BaptizedHolySpirit { get; set; }
-    public List<Occurrence?> Occorrencies { get; set; }
+    public bool IsBaptizedHolySpirit { get; set; }
+    public List<Occurrence?> Occorrences { get; set; }
+    public List<Contact?> Contacts { get; set; }
     public Tracker Tracker { get; set; }
     
     public void ChangeInformation(EStatus status, ERole role)

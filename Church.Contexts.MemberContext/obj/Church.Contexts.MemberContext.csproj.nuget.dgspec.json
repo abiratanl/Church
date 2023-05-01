@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj": {}
+    "C:\\Backup\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj": {}
   },
   "projects": {
-    "C:\\dev\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj": {
+    "C:\\Backup\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj",
+        "projectUniqueName": "C:\\Backup\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj",
         "projectName": "Church.Contexts.MemberContext",
-        "projectPath": "C:\\dev\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj",
+        "projectPath": "C:\\Backup\\Church\\Church.Contexts.MemberContext\\Church.Contexts.MemberContext.csproj",
         "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Church\\Church.Contexts.MemberContext\\obj\\",
+        "outputPath": "C:\\Backup\\Church\\Church.Contexts.MemberContext\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
-                "projectPath": "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj"
+              "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
+                "projectPath": "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj"
               },
-              "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
-                "projectPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
+              "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
+                "projectPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
+    "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj",
+        "projectUniqueName": "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj",
         "projectName": "Church.Contexts.PersonContext",
-        "projectPath": "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj",
+        "projectPath": "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj",
         "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Church\\Church.Contexts.PersonContext\\obj\\",
+        "outputPath": "C:\\Backup\\Church\\Church.Contexts.PersonContext\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,8 +90,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
-                "projectPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
+              "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
+                "projectPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
               }
             }
           }
@@ -131,14 +131,14 @@
         }
       }
     },
-    "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
+    "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
+        "projectUniqueName": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
         "projectName": "Church.Contexts.SharedContext",
-        "projectPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
+        "projectPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
         "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\obj\\",
+        "outputPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",

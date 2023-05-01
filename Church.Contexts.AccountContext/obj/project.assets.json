@@ -744,11 +744,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj",
+      "projectUniqueName": "C:\\Backup\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj",
       "projectName": "Church.Contexts.AccountContext",
-      "projectPath": "C:\\dev\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj",
+      "projectPath": "C:\\Backup\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj",
       "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Church\\Church.Contexts.AccountContext\\obj\\",
+      "outputPath": "C:\\Backup\\Church\\Church.Contexts.AccountContext\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -765,14 +765,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
-              "projectPath": "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj"
+            "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
+              "projectPath": "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj"
             },
-            "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
-              "projectPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
+            "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
+              "projectPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
             },
-            "C:\\dev\\Church\\Church.Services.Google\\Church.Services.Google.csproj": {
-              "projectPath": "C:\\dev\\Church\\Church.Services.Google\\Church.Services.Google.csproj"
+            "C:\\Backup\\Church\\Church.Services.Google\\Church.Services.Google.csproj": {
+              "projectPath": "C:\\Backup\\Church\\Church.Services.Google\\Church.Services.Google.csproj"
             }
           }
         }

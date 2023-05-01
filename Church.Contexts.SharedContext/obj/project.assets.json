@@ -72,11 +72,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
+      "projectUniqueName": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
       "projectName": "Church.Contexts.SharedContext",
-      "projectPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
+      "projectPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
       "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\obj\\",
+      "outputPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -3,6 +3,7 @@ using Church.Data.Contexts.AccountContext.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Church.Contexts.SharedContext.Entities;
 using Church.Data.Contexts.PersonContext.Mappings;
+using Church.Contexts.MemberContext.Entities;
 
 namespace Church.Data;
 
@@ -18,6 +19,14 @@ public class DataContext : DbContext
     public DbSet<User> Users { get; set; } = null!;
     public DbSet<Role> Roles { get; set; } = null!;
     public DbSet<UserRole> UserRoles { get; set; } = null!;
+
+    #endregion
+
+    #region Member
+
+    public DbSet<Congregation> Congregations { get; set; } = null!;
+    public DbSet<Member> Members { get; set; } = null!;
+    public DbSet<Leader> Leaders { get; set; } = null!;
 
     #endregion
 
