@@ -539,11 +539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Backup\\Church\\Church.Services.Google\\Church.Services.Google.csproj",
+      "projectUniqueName": "C:\\dev\\Church\\Church.Services.Google\\Church.Services.Google.csproj",
       "projectName": "Church.Services.Google",
-      "projectPath": "C:\\Backup\\Church\\Church.Services.Google\\Church.Services.Google.csproj",
+      "projectPath": "C:\\dev\\Church\\Church.Services.Google\\Church.Services.Google.csproj",
       "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-      "outputPath": "C:\\Backup\\Church\\Church.Services.Google\\obj\\",
+      "outputPath": "C:\\dev\\Church\\Church.Services.Google\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -560,8 +560,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
-              "projectPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
+            "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
+              "projectPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
             }
           }
         }

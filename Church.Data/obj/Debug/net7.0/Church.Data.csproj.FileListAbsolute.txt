@@ -52,3 +52,5 @@ C:\Backup\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.SharedContext.pdb
 C:\Backup\Church\Church.Data\bin\Debug\net7.0\Church.Services.Google.pdb
 C:\Backup\Church\Church.Data\obj\Debug\net7.0\Church.Data.csproj.CopyComplete
 C:\Backup\Church\Church.Data\obj\Debug\net7.0\ref\Church.Data.dll
+C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.MemberContext.dll
+C:\dev\Church\Church.Data\bin\Debug\net7.0\Church.Contexts.MemberContext.pdb

@@ -5,36 +5,71 @@ using Church.Contexts.SharedContext.ValueObjects;
 namespace Church.Contexts.MemberContext.Entities;
 
 public class Congregation : Entity
-{
-    // Obrigatório para o EF funcionar
-    protected Congregation()
-    {
-        
-    }
-    public Congregation(Address address, DateTime? fundationDate, string leader, DateTime leaderExchangeDate, string name)
+{    
+    #region Contructors
+
+    public Congregation() => Tracker = new Tracker("Criação do cadastro da congregação.");
+
+    public Congregation(
+        Address address, 
+        List<Contact?> contacts, 
+        DateTime endDate, 
+        DateTime? fundationDate, 
+        string name, 
+        List<Member?> members)
     {
         Address = address;
+        Contacts = contacts;
+        EndDate = endDate;
         FundationDate = fundationDate;
-        Leader = leader;
-        LeaderExchangeDate = leaderExchangeDate;
         Name = name;
+        Members = members;
+        Tracker = new Tracker("Criação do cadastro da congregação.");
     }
-    
-    
-    public Address Address { get; private set; } = null!;
-    public DateTime? FundationDate { get; private set; } = null!;
-    public string Leader { get; private set; } = String.Empty;
-    public DateTime? LeaderExchangeDate { get; private set; } = null!;
-    public string Name { get; private set; } = String.Empty;
-    public List<Member> Members { get; set; }
 
-    public void ChangeInformation(DateTime? fundationDate, string leader, DateTime leaderExchangeDate, string name)
+
+
+    #endregion
+
+
+    #region Public Propeties
+
+    public Address Address { get; private set; } = null!;
+    public List<Contact?> Contacts { get; private set; } = new List<Contact?>();
+    public DateTime EndDate { get; private set; }
+    public DateTime? FundationDate { get; private set; } = null!;
+    public bool IsDeleted { get; private set; }
+    public string Name { get; private set; } = String.Empty;
+    public List<Member?> Members { get; private set; } = new List<Member?>();
+    public Tracker Tracker { get; } = null!;
+
+    #endregion
+
+    #region Public Methods
+    public void Modify(
+        Address address,
+        List<Contact?> contacts,
+        DateTime endDate,
+        DateTime? fundationDate,
+        string name,
+        List<Member?> members)
     {
+        Address = address;
+        Contacts = contacts;
+        EndDate = endDate;
         FundationDate = fundationDate;
-        Leader = leader;
-        LeaderExchangeDate = leaderExchangeDate;
         Name = name;
+        Members = members;
+        Tracker.Update("Informações atualizadas.");
     }
-    
-    //public void ChangeAddress(Address address) => Address = address; 
+
+    public void ChangeAddress(Address address) => Address = address;
+
+    public void Delete()
+    {
+        IsDeleted = true;
+        Tracker.Update("Congregação excluída.");
+    }
+     
+    #endregion
 }

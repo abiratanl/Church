@@ -9,70 +9,81 @@ public class CongregationMap : IEntityTypeConfiguration<Congregation>
 {
     public void Configure(EntityTypeBuilder<Congregation> builder)
     {
-        builder.ToTable("Congregation");
-        
-        builder.HasKey(x => x.Id);
+        #region Identifiers
 
-        builder.HasOne(x => x.Address);
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.ZipCode)
+        builder.ToTable("Congregation");
+        builder.HasKey(c => c.Id);
+        #endregion
+
+        #region Properties
+
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.ZipCode)
             .HasMaxLength(20)
             .HasColumnName("ZipCode")
             .HasColumnType("NVARCHAR");
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.Street)
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.Street)
             .HasMaxLength(160)
             .HasColumnName("Street")
             .HasColumnType("NVARCHAR");
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.Number)
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.Number)
             .HasMaxLength(20)
             .HasColumnName("Number")
             .HasColumnType("NVARCHAR");
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.District)
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.District)
             .HasMaxLength(160)
             .HasColumnName("District")
             .HasColumnType("NVARCHAR");
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.City)
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.City)
             .HasMaxLength(160)
             .HasColumnName("City")
             .HasColumnType("NVARCHAR");
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.State)
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.State)
             .HasMaxLength(2)
             .HasColumnName("State")
             .HasColumnType("NVARCHAR");
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.Country)
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.Country)
             .IsRequired(false)
             .HasMaxLength(160)
             .HasColumnName("Country")
             .HasColumnType("NVARCHAR");
-        
-        builder.OwnsOne(x => x.Address)
-            .Property(x => x.Complement)
+        builder.OwnsOne(c => c.Address)
+            .Property(c => c.Complement)
             .IsRequired(false)
             .HasMaxLength(160)
             .HasColumnName("Complement")
             .HasColumnType("NVARCHAR");
-        
-        builder.Property(x => x.FundationDate)
+        builder.Property(c => c.EndDate)
             .HasColumnType("SMALLDATETIME");
-        
-        builder.Property(x => x.Name)
+        builder.Property(c => c.FundationDate)
+            .HasColumnType("SMALLDATETIME");
+        builder.Property(c => c.IsDeleted)
+            .IsRequired()
+            .HasColumnType("BIT");
+        builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(160)
             .HasColumnType("NVARCHAR");
+        builder.OwnsOne(c => c.Tracker)
+           .Property(c => c.CreatedAt)
+           .IsRequired()
+           .HasColumnType("SMALLDATETIME");
+        builder.OwnsOne(c => c.Tracker)
+            .Property(c => c.UpdatedAt)
+            .IsRequired()
+            .HasColumnType("SMALLDATETIME");
+        builder.OwnsOne(c => c.Tracker)
+            .Property(c => c.Notes)
+            .HasMaxLength(160)
+            .HasColumnType("NVARCHAR"); 
+        #endregion
 
-        builder.HasMany(x => x.Members);
+        // builder.HasMany(x => x.Members);
     }
 }

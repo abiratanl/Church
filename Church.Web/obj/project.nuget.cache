@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8u45mT1gO4I/VqkA8GwXt9ygW6bDxRAR3uNF04l+yeSfdyiiXKhGznVQuRICmJizSOeh71Ni5qCBIFXkr071Vg==",
+  "dgSpecHash": "rCE3HwBCMG1YTSLz2kJQRKJi8zZfQ3ldX0b5uiX2OMPvtH2GSN/nVHPXEIvkkEXvo4fRs7nI6CojY86J43K4VA==",
   "success": true,
-  "projectFilePath": "C:\\Backup\\Church\\Church.Web\\Church.Web.csproj",
+  "projectFilePath": "C:\\dev\\Church\\Church.Web\\Church.Web.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

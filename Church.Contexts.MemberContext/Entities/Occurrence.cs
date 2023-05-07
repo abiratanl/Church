@@ -27,13 +27,13 @@ public class Occurrence : Entity
         DateTime occurrenceDate, 
         EOccurrenceType occurrenceType, 
         bool isDeleted, 
-        Member memberId, 
+        Member member, 
         string notes)
     {
         OccurrenceDate = occurrenceDate;
         OccurrenceType = occurrenceType;
         IsDeleted = isDeleted;
-        MemberId = memberId;
+        Member = member;
         Notes = notes;
         Tracker = new Tracker("Criação do cadastro de ocorrências.");
     }
@@ -42,7 +42,7 @@ public class Occurrence : Entity
     #region Public Properties
 
     public bool IsDeleted { get; private set; }
-    public Member MemberId { get; private set; }
+    public Member Member { get; private set; }
     public DateTime OccurrenceDate { get; private set; }
     public EOccurrenceType OccurrenceType { get; private set; }
     public string? Notes { get; private set; }
@@ -62,12 +62,12 @@ public class Occurrence : Entity
     public void Modify(
         DateTime occurrenceDate,
         EOccurrenceType occurrenceType,
-        Member memberId,
+        Member member,
         string notes)
     {
         OccurrenceDate = occurrenceDate;
         OccurrenceType = occurrenceType;
-        MemberId = memberId;
+        Member = member;
         Notes = notes;
         Tracker.Update("Informações atualizadas.");
     }

@@ -18,7 +18,7 @@ public class Leader : Entity
     /// <param name="congregation">Congregation of the leader</param>
     /// <param name="endDate">Date of ledearship begining</param>
     /// <param name="isDeleted">Leader status</param>
-    /// <param name="memberId">Member Global Unidque identifier</param>
+    /// <param name="member">Member Global Unidque identifier</param>
     /// <param name="notes">Special information about ledearship</param>
     /// <param name="startDate">Date of the leadership end</param>
     /// <exception cref="ArgumentNullException"></exception>
@@ -26,14 +26,14 @@ public class Leader : Entity
         Congregation congregation, 
         DateTime endDate, 
         bool isDeleted,
-        Member memberId,
+        Member member,
         string notes,
         DateTime startDate)
     {
         Congregation = congregation;
         EndDate = endDate;
         IsDeleted= isDeleted;
-        MemberId = memberId;
+        Member = member;
         Notes = notes;
         StartDate = startDate;
     }
@@ -45,7 +45,7 @@ public class Leader : Entity
     public Congregation Congregation { get; private set; } = null!;
     public DateTime EndDate { get; private set; }
     public bool IsDeleted { get; private set; }
-    public Member MemberId { get; private set; } = null!;
+    public Member Member { get; private set; } = null!;
     public string? Notes { get; private set; }
     public DateTime StartDate { get; private set; }
     public Tracker Tracker { get; } = null!;
@@ -56,13 +56,13 @@ public class Leader : Entity
     public void Modify(
         Congregation congregation,
         DateTime endDate, 
-        Member memberId,
+        Member member,
         string? notes,
         DateTime startDate)
     {
         Congregation= congregation;
         EndDate= endDate;   
-        MemberId= memberId;
+        Member= member;
         Notes = notes;
         StartDate= startDate;
         Tracker.Update("Informações atualizadas.");

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Church.Contexts.SharedContext.Entities;
 using Church.Data.Contexts.PersonContext.Mappings;
 using Church.Contexts.MemberContext.Entities;
+using Church.Data.Contexts.MemberContext.Mapping;
 
 namespace Church.Data;
 
@@ -27,6 +28,8 @@ public class DataContext : DbContext
     public DbSet<Congregation> Congregations { get; set; } = null!;
     public DbSet<Member> Members { get; set; } = null!;
     public DbSet<Leader> Leaders { get; set; } = null!;
+    public DbSet<Contact> Contacts { get; set; }
+    public DbSet<Occurrence> Occurrences { get; set; } = null!;
 
     #endregion
 
@@ -54,6 +57,15 @@ public class DataContext : DbContext
         builder.ApplyConfiguration(new PersonMap());
         builder.ApplyConfiguration(new DocumentMap());
 
+        #endregion
+
+        #region Member
+
+        builder.ApplyConfiguration(new MemberMap());
+        builder.ApplyConfiguration(new CongregationMap());
+        builder.ApplyConfiguration(new ContactMap());
+        builder.ApplyConfiguration(new OccurrenceMap());
+        builder.ApplyConfiguration(new LeaderMap());
         #endregion
     }
 }

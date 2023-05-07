@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FxRAxyIpam/MhEpc/b8ufSzjPVcPNdY46aqi0r7U+2pbXzNdQ0Da7Iqui51D5J2DiX6XGfhhWV+0bZjIgzgS/g==",
+  "dgSpecHash": "ZLFoLWR95QiDnKjpzYNfxlOf7nLzyNA4vGLcE66XyWFS/a7d+EewaLBaVVN76Mh+j+1jv244aRyb34KE/NreLQ==",
   "success": true,
-  "projectFilePath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
+  "projectFilePath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abilo\\.nuget\\packages\\restsharp\\109.0.0-preview.1\\restsharp.109.0.0-preview.1.nupkg.sha512",
     "C:\\Users\\abilo\\.nuget\\packages\\secureidentity\\1.0.4\\secureidentity.1.0.4.nupkg.sha512"

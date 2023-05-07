@@ -1,43 +1,101 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Church.Contexts.SharedContext.Enums;
+﻿using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.ValueObjects;
 
 namespace Church.Contexts.MemberContext.Entities;
 
-
 public class Member : Entity
 {
-    [Required(ErrorMessage = "O campo pessoa é obrigatório!")]
-    public Person Person { get; set; }
-    [Required(ErrorMessage = "O campo congregação é obrigatório!")]
-    public Congregation CongregationId { get; set; }
-    [Required(ErrorMessage = "O campo cargo é obrigatório!")]
-    public ERole Role { get; set; }
-    public EStatus Status { get; set; }
-    public EMaritalStatus MaritalStatus { get; set; }
-    public bool IsDeleted { get; private set; }
-    public string? FatherName { get; set; }
-    public string? MotherName { get; set; }
-    public DateTime EntryDate { get; set; }
-    public string? SpouseName { get; set; }
-    public bool? SpouseIsBeliever { get; set; }
-    public bool IsBaptizedHolySpirit { get; set; }
-    public List<Occurrence?> Occorrences { get; set; }
-    public List<Contact?> Contacts { get; set; }
-    public Tracker Tracker { get; set; }
-    
-    public void ChangeInformation(EStatus status, ERole role)
+    #region Contructors
+
+    public Member() => Tracker = new Tracker("Criação do cadastro do membro");
+
+    public Member(
+        Congregation congregation, 
+        List<Contact?> contacts, 
+        DateTime entryDate, 
+        bool isBaptizedHolySpirit, 
+        bool isDeleted, 
+        EMaritalStatus maritalStatus, 
+        List<Occurrence?> occorrences, 
+        Person person, 
+        ERole role, 
+        bool? spouseIsBeliever, 
+        string? spouseName, 
+        EStatus status)
     {
+        Congregation = congregation;
+        Contacts = contacts;
+        EntryDate = entryDate;
+        IsBaptizedHolySpirit = isBaptizedHolySpirit;
+        IsDeleted = isDeleted;
+        MaritalStatus = maritalStatus;
+        Occorrences = occorrences;
+        Person = person;
+        Role = role;
+        SpouseIsBeliever = spouseIsBeliever;
+        SpouseName = spouseName;
         Status = status;
-        Role = Role;
+        Tracker = new Tracker("Criação do cadastro do membro.");
+    }    
+
+    #endregion
+
+    #region Public Properties
+
+    public Congregation Congregation { get; private set; } = null!;
+    public List<Contact?> Contacts { get; private set; } = new List<Contact?>();
+    public DateTime EntryDate { get; private set; }
+    public bool IsBaptizedHolySpirit { get; private set; } = false;
+    public bool IsDeleted { get; private set; } = false;
+    public EMaritalStatus MaritalStatus { get; private set; } = EMaritalStatus.Married;
+    public List<Occurrence?> Occorrences { get; private set; } = new List<Occurrence?>();
+    public Person Person { get; private set; } = null!;
+    public ERole Role { get; private set; } = ERole.Member;
+    public bool? SpouseIsBeliever { get; private set; } = false;
+    public string? SpouseName { get; private set; }
+    public EStatus Status { get; private set; } = EStatus.Active;
+    public Tracker Tracker { get; } = null!;
+    #endregion
+
+    #region Public Methods
+
+    public void Modify(
+    Congregation congregation,
+    List<Contact?> contacts,
+    DateTime entryDate,
+    bool isBaptizedHolySpirit,
+    bool isDeleted,
+    EMaritalStatus maritalStatus,
+    List<Occurrence?> occorrences,
+    Person person,
+    ERole role,
+    bool? spouseIsBeliever,
+    string? spouseName,
+    EStatus status)
+    {
+        Congregation = congregation;
+        Contacts = contacts;
+        EntryDate = entryDate;
+        IsBaptizedHolySpirit = isBaptizedHolySpirit;
+        IsDeleted = isDeleted;
+        MaritalStatus = maritalStatus;
+        Occorrences = occorrences;
+        Person = person;
+        Role = role;
+        SpouseIsBeliever = spouseIsBeliever;
+        SpouseName = spouseName;
+        Status = status;
+        Tracker.Update("Informações do membro atualizadas");
     }
 
     public void Delete()
     {
         IsDeleted = true;
-        Tracker.Update("Pessoa excluída.");
-    }
+        Tracker.Update("Membro excluído.");
+    } 
+
+    #endregion
 }
 
 

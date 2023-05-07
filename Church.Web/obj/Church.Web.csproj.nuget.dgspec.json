@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Backup\\Church\\Church.Web\\Church.Web.csproj": {}
+    "C:\\dev\\Church\\Church.Web\\Church.Web.csproj": {}
   },
   "projects": {
-    "C:\\Backup\\Church\\Church.Web\\Church.Web.csproj": {
+    "C:\\dev\\Church\\Church.Web\\Church.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Backup\\Church\\Church.Web\\Church.Web.csproj",
+        "projectUniqueName": "C:\\dev\\Church\\Church.Web\\Church.Web.csproj",
         "projectName": "Church.Web",
-        "projectPath": "C:\\Backup\\Church\\Church.Web\\Church.Web.csproj",
+        "projectPath": "C:\\dev\\Church\\Church.Web\\Church.Web.csproj",
         "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Backup\\Church\\Church.Web\\obj\\",
+        "outputPath": "C:\\dev\\Church\\Church.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",

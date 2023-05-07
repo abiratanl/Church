@@ -17,20 +17,23 @@ public class Contact : Entity
     /// Create a new instance of Person with personalized configuration
     /// </summary>
     /// <param name="contactType">Contact type (email, phone, etc)</param>
+    /// <param name="congregation">Congregation)</param>
     /// <param name="description">Contact description</param>
     /// <param name="isDeleted">Contact status</param>
-    /// <param name="memberId">Member Global Unique Identification</param>
+    /// <param name="member">Member Global Unique Identification</param>
     /// <exception cref="ArgumentNullException"></exception>
     public Contact(
         EContactType contactType,
         string description,
         bool isDeleted,
-        Member memberId)
+        Congregation? congregation,
+        Member? member)
     {
         ContactType = contactType;
         Description = description;
         IsDeleted = isDeleted;
-        MemberId = memberId;
+        Congregation = congregation;
+        Member = member;
         Tracker = new Tracker("Criação do cadastro de ocorrências.");
     }
 
@@ -38,10 +41,11 @@ public class Contact : Entity
     #region Public Properties
 
 
-    public EContactType ContactType { get; private set; }
+    public EContactType ContactType { get; private set; } = EContactType.CelPhone;
+    public Congregation? Congregation { get; private set; } = null;
     public string Description { get; private set; } = String.Empty;
-    public bool IsDeleted { get; private set; }
-    public Member MemberId { get; private set; }
+    public bool IsDeleted { get; private set; } = false;
+    public Member? Member { get; private set; } = null;
     public Tracker Tracker { get; } = null!;
 
     #endregion
@@ -53,16 +57,18 @@ public class Contact : Entity
     /// </summary>
     /// <param name="contactType">Type of contact</param>
     /// <param name="description">Description of contact</param>
-    /// <param name="memberId">Member Global Unique Identifier</param>
+    /// <param name="member">Member Global Unique Identifier</param>
     /// <returns>void</returns>
     public void Modify(
         EContactType contactType,
         string description,
-        Member memberId)
+        Congregation? congregation,
+        Member? member)
     {
         ContactType = contactType;
         Description = description;
-        MemberId = memberId;
+        Congregation = congregation;
+        Member = member;
         Tracker.Update("Informações atualizadas.");
     }
 

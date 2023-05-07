@@ -6777,11 +6777,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Backup\\Church\\UTests\\UTests.csproj",
+      "projectUniqueName": "C:\\dev\\Church\\UTests\\UTests.csproj",
       "projectName": "UTests",
-      "projectPath": "C:\\Backup\\Church\\UTests\\UTests.csproj",
+      "projectPath": "C:\\dev\\Church\\UTests\\UTests.csproj",
       "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-      "outputPath": "C:\\Backup\\Church\\UTests\\obj\\",
+      "outputPath": "C:\\dev\\Church\\UTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
