@@ -238,6 +238,38 @@ namespace Church.API.Migrations
                     b.ToTable("Member", "backoffice");
                 });
 
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Newsletter", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.Property<string>("EventDescription")
+                        .IsRequired()
+                        .HasMaxLength(180)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<string>("EventLocal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan>("EventTime")
+                        .HasColumnType("time");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Newsletter", "backoffice");
+                });
+
             modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Occurrence", b =>
                 {
                     b.Property<Guid>("Id")

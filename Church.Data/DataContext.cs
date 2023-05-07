@@ -5,6 +5,7 @@ using Church.Contexts.SharedContext.Entities;
 using Church.Data.Contexts.PersonContext.Mappings;
 using Church.Contexts.MemberContext.Entities;
 using Church.Data.Contexts.MemberContext.Mapping;
+using System.Reflection.Emit;
 
 namespace Church.Data;
 
@@ -30,6 +31,8 @@ public class DataContext : DbContext
     public DbSet<Leader> Leaders { get; set; } = null!;
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Occurrence> Occurrences { get; set; } = null!;
+    public DbSet<Newsletter> Newsletters { get; set; } = null!;
+
 
     #endregion
 
@@ -41,7 +44,7 @@ public class DataContext : DbContext
     #endregion
 
     protected override void OnModelCreating(ModelBuilder builder)
-    {
+    {       
         #region Account
 
         builder.HasDefaultSchema("backoffice");
@@ -66,6 +69,8 @@ public class DataContext : DbContext
         builder.ApplyConfiguration(new ContactMap());
         builder.ApplyConfiguration(new OccurrenceMap());
         builder.ApplyConfiguration(new LeaderMap());
+        builder.ApplyConfiguration(new NewsletterMap());
+
         #endregion
     }
 }
