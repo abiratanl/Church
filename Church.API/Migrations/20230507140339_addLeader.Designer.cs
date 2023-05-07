@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Church.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230430123135_createDB")]
-    partial class createDB
+    [Migration("20230507140339_addLeader")]
+    partial class addLeader
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,6 +104,173 @@ namespace Church.API.Migrations
                     b.ToTable("UserRole", "backoffice");
                 });
 
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.Property<DateTime?>("FundationDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("NVARCHAR");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Congregation", "backoffice");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Contact", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CongregationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte>("ContactType")
+                        .HasColumnType("TINYINT");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(180)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<Guid?>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CongregationId");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("Contact", "backoffice");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CongregationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("Datetime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(180)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("Datetime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CongregationId");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("Leader", "backoffice");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CongregationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("EntryDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.Property<bool>("IsBaptizedHolySpirit")
+                        .HasColumnType("BIT");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<byte>("MaritalStatus")
+                        .HasColumnType("TINYINT");
+
+                    b.Property<Guid>("PersonId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte>("Role")
+                        .HasColumnType("TINYINT");
+
+                    b.Property<bool?>("SpouseIsBeliever")
+                        .HasColumnType("BIT");
+
+                    b.Property<string>("SpouseName")
+                        .HasMaxLength(160)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("TINYINT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CongregationId");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("Member", "backoffice");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Occurrence", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<DateTime>("OccurrenceDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.Property<byte>("OccurrenceType")
+                        .HasColumnType("TINYINT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("Occurrence", "backoffice");
+                });
+
             modelBuilder.Entity("Church.Contexts.SharedContext.Entities.Document", b =>
                 {
                     b.Property<Guid>("Id")
@@ -147,7 +314,6 @@ namespace Church.API.Migrations
                         .HasColumnType("NVARCHAR");
 
                     b.Property<string>("FatherName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Gender")
@@ -158,7 +324,6 @@ namespace Church.API.Migrations
                         .HasColumnName("IsDeleted");
 
                     b.Property<string>("MotherName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nationality")
@@ -365,6 +530,270 @@ namespace Church.API.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
+                {
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Address", "Address", b1 =>
+                        {
+                            b1.Property<Guid>("CongregationId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("City")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("City");
+
+                            b1.Property<string>("Complement")
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("Complement");
+
+                            b1.Property<string>("Country")
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("Country");
+
+                            b1.Property<string>("District")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("District");
+
+                            b1.Property<string>("Number")
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("Number");
+
+                            b1.Property<string>("State")
+                                .IsRequired()
+                                .HasMaxLength(2)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("State");
+
+                            b1.Property<string>("Street")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("Street");
+
+                            b1.Property<string>("ZipCode")
+                                .IsRequired()
+                                .HasMaxLength(20)
+                                .HasColumnType("NVARCHAR")
+                                .HasColumnName("ZipCode");
+
+                            b1.HasKey("CongregationId");
+
+                            b1.ToTable("Congregation", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("CongregationId");
+                        });
+
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
+                        {
+                            b1.Property<Guid>("CongregationId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<DateTime>("CreatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR");
+
+                            b1.Property<DateTime>("UpdatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.HasKey("CongregationId");
+
+                            b1.ToTable("Congregation", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("CongregationId");
+                        });
+
+                    b.Navigation("Address")
+                        .IsRequired();
+
+                    b.Navigation("Tracker")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Contact", b =>
+                {
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
+                        .WithMany("Contacts")
+                        .HasForeignKey("CongregationId");
+
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
+                        .WithMany("Contacts")
+                        .HasForeignKey("MemberId");
+
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
+                        {
+                            b1.Property<Guid>("ContactId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<DateTime>("CreatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR");
+
+                            b1.Property<DateTime>("UpdatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.HasKey("ContactId");
+
+                            b1.ToTable("Contact", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ContactId");
+                        });
+
+                    b.Navigation("Congregation");
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Tracker")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
+                {
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
+                        .WithMany()
+                        .HasForeignKey("CongregationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
+                        .WithMany()
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
+                        {
+                            b1.Property<Guid>("LeaderId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<DateTime>("CreatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR");
+
+                            b1.Property<DateTime>("UpdatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.HasKey("LeaderId");
+
+                            b1.ToTable("Leader", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("LeaderId");
+                        });
+
+                    b.Navigation("Congregation");
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Tracker")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
+                {
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
+                        .WithMany("Members")
+                        .HasForeignKey("CongregationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Church.Contexts.SharedContext.Entities.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
+                        {
+                            b1.Property<Guid>("MemberId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<DateTime>("CreatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR");
+
+                            b1.Property<DateTime>("UpdatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.HasKey("MemberId");
+
+                            b1.ToTable("Member", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("MemberId");
+                        });
+
+                    b.Navigation("Congregation");
+
+                    b.Navigation("Person");
+
+                    b.Navigation("Tracker")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Occurrence", b =>
+                {
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
+                        .WithMany("Occorrences")
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
+                        {
+                            b1.Property<Guid>("OccurrenceId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<DateTime>("CreatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR");
+
+                            b1.Property<DateTime>("UpdatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.HasKey("OccurrenceId");
+
+                            b1.ToTable("Occurrence", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("OccurrenceId");
+                        });
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Tracker")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Church.Contexts.SharedContext.Entities.Document", b =>
                 {
                     b.HasOne("Church.Contexts.SharedContext.Entities.Person", "Person")
@@ -405,30 +834,6 @@ namespace Church.API.Migrations
 
             modelBuilder.Entity("Church.Contexts.SharedContext.Entities.Person", b =>
                 {
-                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
-                        {
-                            b1.Property<Guid>("PersonId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<DateTime>("CreatedAt")
-                                .HasColumnType("SMALLDATETIME");
-
-                            b1.Property<string>("Notes")
-                                .IsRequired()
-                                .HasMaxLength(160)
-                                .HasColumnType("NVARCHAR");
-
-                            b1.Property<DateTime>("UpdatedAt")
-                                .HasColumnType("SMALLDATETIME");
-
-                            b1.HasKey("PersonId");
-
-                            b1.ToTable("Person", "backoffice");
-
-                            b1.WithOwner()
-                                .HasForeignKey("PersonId");
-                        });
-
                     b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Address", "Address", b1 =>
                         {
                             b1.Property<Guid>("PersonId")
@@ -480,6 +885,30 @@ namespace Church.API.Migrations
                                 .IsRequired()
                                 .HasMaxLength(20)
                                 .HasColumnType("NVARCHAR");
+
+                            b1.HasKey("PersonId");
+
+                            b1.ToTable("Person", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("PersonId");
+                        });
+
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
+                        {
+                            b1.Property<Guid>("PersonId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<DateTime>("CreatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR");
+
+                            b1.Property<DateTime>("UpdatedAt")
+                                .HasColumnType("SMALLDATETIME");
 
                             b1.HasKey("PersonId");
 
@@ -567,6 +996,20 @@ namespace Church.API.Migrations
 
                     b.Navigation("Tracker")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
+                {
+                    b.Navigation("Contacts");
+
+                    b.Navigation("Members");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
+                {
+                    b.Navigation("Contacts");
+
+                    b.Navigation("Occorrences");
                 });
 
             modelBuilder.Entity("Church.Contexts.SharedContext.Entities.Person", b =>

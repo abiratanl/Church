@@ -4,6 +4,7 @@ using Church.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Church.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230507140140_createDB")]
+    partial class createDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -156,40 +159,6 @@ namespace Church.API.Migrations
                     b.HasIndex("MemberId");
 
                     b.ToTable("Contact", "backoffice");
-                });
-
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CongregationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("Datetime");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("BIT");
-
-                    b.Property<Guid>("MemberId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Notes")
-                        .HasMaxLength(180)
-                        .HasColumnType("NVARCHAR");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("Datetime");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CongregationId");
-
-                    b.HasIndex("MemberId");
-
-                    b.ToTable("Leader", "backoffice");
                 });
 
             modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
@@ -651,52 +620,6 @@ namespace Church.API.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("ContactId");
-                        });
-
-                    b.Navigation("Congregation");
-
-                    b.Navigation("Member");
-
-                    b.Navigation("Tracker")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
-                {
-                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
-                        .WithMany()
-                        .HasForeignKey("CongregationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
-                        {
-                            b1.Property<Guid>("LeaderId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<DateTime>("CreatedAt")
-                                .HasColumnType("SMALLDATETIME");
-
-                            b1.Property<string>("Notes")
-                                .IsRequired()
-                                .HasMaxLength(160)
-                                .HasColumnType("NVARCHAR");
-
-                            b1.Property<DateTime>("UpdatedAt")
-                                .HasColumnType("SMALLDATETIME");
-
-                            b1.HasKey("LeaderId");
-
-                            b1.ToTable("Leader", "backoffice");
-
-                            b1.WithOwner()
-                                .HasForeignKey("LeaderId");
                         });
 
                     b.Navigation("Congregation");

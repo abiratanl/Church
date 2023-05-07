@@ -4426,11 +4426,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Backup\\Church\\Church.API\\Church.API.csproj",
+      "projectUniqueName": "C:\\dev\\Church\\Church.API\\Church.API.csproj",
       "projectName": "Church.API",
-      "projectPath": "C:\\Backup\\Church\\Church.API\\Church.API.csproj",
+      "projectPath": "C:\\dev\\Church\\Church.API\\Church.API.csproj",
       "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
-      "outputPath": "C:\\Backup\\Church\\Church.API\\obj\\",
+      "outputPath": "C:\\dev\\Church\\Church.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4447,17 +4447,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Backup\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj": {
-              "projectPath": "C:\\Backup\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj"
+            "C:\\dev\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj": {
+              "projectPath": "C:\\dev\\Church\\Church.Contexts.AccountContext\\Church.Contexts.AccountContext.csproj"
             },
-            "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
-              "projectPath": "C:\\Backup\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj"
+            "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj": {
+              "projectPath": "C:\\dev\\Church\\Church.Contexts.PersonContext\\Church.Contexts.PersonContext.csproj"
             },
-            "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
-              "projectPath": "C:\\Backup\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
+            "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj": {
+              "projectPath": "C:\\dev\\Church\\Church.Contexts.SharedContext\\Church.Contexts.SharedContext.csproj"
             },
-            "C:\\Backup\\Church\\Church.Data\\Church.Data.csproj": {
-              "projectPath": "C:\\Backup\\Church\\Church.Data\\Church.Data.csproj"
+            "C:\\dev\\Church\\Church.Data\\Church.Data.csproj": {
+              "projectPath": "C:\\dev\\Church\\Church.Data\\Church.Data.csproj"
             }
           }
         }

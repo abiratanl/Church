@@ -31,6 +31,33 @@ namespace Church.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Congregation",
+                schema: "backoffice",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ZipCode = table.Column<string>(type: "NVARCHAR(20)", maxLength: 20, nullable: false),
+                    Street = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
+                    Number = table.Column<string>(type: "NVARCHAR(20)", maxLength: 20, nullable: false),
+                    Complement = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: true),
+                    District = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
+                    City = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
+                    State = table.Column<string>(type: "NVARCHAR(2)", maxLength: 2, nullable: false),
+                    Country = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: true),
+                    EndDate = table.Column<DateTime>(type: "SMALLDATETIME", nullable: false),
+                    FundationDate = table.Column<DateTime>(type: "SMALLDATETIME", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "BIT", nullable: false),
+                    Name = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: false),
+                    TrackerCreatedAt = table.Column<DateTime>(name: "Tracker_CreatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerUpdatedAt = table.Column<DateTime>(name: "Tracker_UpdatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Congregation", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Person",
                 schema: "backoffice",
                 columns: table => new
@@ -59,8 +86,8 @@ namespace Church.API.Migrations
                     PhoneVerificationCode = table.Column<string>(name: "Phone_Verification_Code", type: "CHAR(6)", maxLength: 6, nullable: true),
                     PhoneVerificationCodeExpireDate = table.Column<DateTime>(name: "Phone_Verification_CodeExpireDate", type: "DATETIME2", nullable: true),
                     Photo = table.Column<string>(type: "NVARCHAR", nullable: true),
-                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MotherName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FatherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MotherName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TrackerCreatedAt = table.Column<DateTime>(name: "Tracker_CreatedAt", type: "SMALLDATETIME", nullable: false),
                     TrackerUpdatedAt = table.Column<DateTime>(name: "Tracker_UpdatedAt", type: "SMALLDATETIME", nullable: false),
                     TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false)
@@ -110,6 +137,45 @@ namespace Church.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Member",
+                schema: "backoffice",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CongregationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EntryDate = table.Column<DateTime>(type: "SMALLDATETIME", nullable: false),
+                    IsBaptizedHolySpirit = table.Column<bool>(type: "BIT", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "BIT", nullable: false),
+                    MaritalStatus = table.Column<byte>(type: "TINYINT", nullable: false),
+                    PersonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Role = table.Column<byte>(type: "TINYINT", nullable: false),
+                    SpouseIsBeliever = table.Column<bool>(type: "BIT", nullable: true),
+                    SpouseName = table.Column<string>(type: "NVARCHAR(160)", maxLength: 160, nullable: true),
+                    Status = table.Column<byte>(type: "TINYINT", nullable: false),
+                    TrackerCreatedAt = table.Column<DateTime>(name: "Tracker_CreatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerUpdatedAt = table.Column<DateTime>(name: "Tracker_UpdatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Member", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Member_Congregation_CongregationId",
+                        column: x => x.CongregationId,
+                        principalSchema: "backoffice",
+                        principalTable: "Congregation",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Member_Person_PersonId",
+                        column: x => x.PersonId,
+                        principalSchema: "backoffice",
+                        principalTable: "Person",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "User",
                 schema: "backoffice",
                 columns: table => new
@@ -135,6 +201,65 @@ namespace Church.API.Migrations
                         column: x => x.PersonId,
                         principalSchema: "backoffice",
                         principalTable: "Person",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contact",
+                schema: "backoffice",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ContactType = table.Column<byte>(type: "TINYINT", nullable: false),
+                    CongregationId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Description = table.Column<string>(type: "NVARCHAR(180)", maxLength: 180, nullable: false),
+                    IsDeleted = table.Column<bool>(type: "BIT", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    TrackerCreatedAt = table.Column<DateTime>(name: "Tracker_CreatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerUpdatedAt = table.Column<DateTime>(name: "Tracker_UpdatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contact", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contact_Congregation_CongregationId",
+                        column: x => x.CongregationId,
+                        principalSchema: "backoffice",
+                        principalTable: "Congregation",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Contact_Member_MemberId",
+                        column: x => x.MemberId,
+                        principalSchema: "backoffice",
+                        principalTable: "Member",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Occurrence",
+                schema: "backoffice",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "BIT", nullable: false),
+                    MemberId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OccurrenceDate = table.Column<DateTime>(type: "SMALLDATETIME", nullable: false),
+                    OccurrenceType = table.Column<byte>(type: "TINYINT", nullable: false),
+                    Notes = table.Column<string>(type: "NVARCHAR(200)", maxLength: 200, nullable: false),
+                    TrackerCreatedAt = table.Column<DateTime>(name: "Tracker_CreatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerUpdatedAt = table.Column<DateTime>(name: "Tracker_UpdatedAt", type: "SMALLDATETIME", nullable: false),
+                    TrackerNotes = table.Column<string>(name: "Tracker_Notes", type: "NVARCHAR(160)", maxLength: 160, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Occurrence", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Occurrence_Member_MemberId",
+                        column: x => x.MemberId,
+                        principalSchema: "backoffice",
+                        principalTable: "Member",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -170,10 +295,40 @@ namespace Church.API.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Contact_CongregationId",
+                schema: "backoffice",
+                table: "Contact",
+                column: "CongregationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contact_MemberId",
+                schema: "backoffice",
+                table: "Contact",
+                column: "MemberId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Document_PersonId",
                 schema: "backoffice",
                 table: "Document",
                 column: "PersonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Member_CongregationId",
+                schema: "backoffice",
+                table: "Member",
+                column: "CongregationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Member_PersonId",
+                schema: "backoffice",
+                table: "Member",
+                column: "PersonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Occurrence_MemberId",
+                schema: "backoffice",
+                table: "Occurrence",
+                column: "MemberId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_User_PersonId",
@@ -202,11 +357,23 @@ namespace Church.API.Migrations
                 schema: "backoffice");
 
             migrationBuilder.DropTable(
+                name: "Contact",
+                schema: "backoffice");
+
+            migrationBuilder.DropTable(
                 name: "Document",
                 schema: "backoffice");
 
             migrationBuilder.DropTable(
+                name: "Occurrence",
+                schema: "backoffice");
+
+            migrationBuilder.DropTable(
                 name: "UserRole",
+                schema: "backoffice");
+
+            migrationBuilder.DropTable(
+                name: "Member",
                 schema: "backoffice");
 
             migrationBuilder.DropTable(
@@ -215,6 +382,10 @@ namespace Church.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "User",
+                schema: "backoffice");
+
+            migrationBuilder.DropTable(
+                name: "Congregation",
                 schema: "backoffice");
 
             migrationBuilder.DropTable(
