@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Church.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230507190721_CreateDB")]
+    [Migration("20230507192730_CreateDB")]
     partial class CreateDB
     {
         /// <inheritdoc />

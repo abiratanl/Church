@@ -17,8 +17,12 @@ public class LeaderMap : IEntityTypeConfiguration<Leader>
 
         #region Relationship
 
-        builder.HasOne(l => l.Congregation);
-        builder.HasOne(l => l.Member);
+        builder.HasOne(l => l.Congregation)
+            .WithMany()
+            .OnDelete(DeleteBehavior.Cascade);
+        builder.HasOne(l => l.Member)
+            .WithMany()
+            .OnDelete(DeleteBehavior.NoAction);
 
         #endregion
 
