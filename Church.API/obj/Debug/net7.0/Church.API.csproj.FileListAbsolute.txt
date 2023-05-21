@@ -206,3 +206,5 @@ C:\Backup\Church\Church.API\obj\Debug\net7.0\Church.API.genruntimeconfig.cache
 C:\Backup\Church\Church.API\obj\Debug\net7.0\ref\Church.API.dll
 C:\dev\Church\Church.API\bin\Debug\net7.0\Church.Contexts.MemberContext.dll
 C:\dev\Church\Church.API\bin\Debug\net7.0\Church.Contexts.MemberContext.pdb
+C:\dev\Church\Church.API\bin\Debug\net7.0\Church.Contexts.AdmContext.dll
+C:\dev\Church\Church.API\bin\Debug\net7.0\Church.Contexts.AdmContext.pdb

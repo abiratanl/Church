@@ -51,9 +51,40 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 
         #endregion
 
+        #region Populate Aggregate Root
+
+        var person = await _repository.GetPersonByIdAsync(request.PersonId);
+
+        //var congregation = new()
+
+        //var congregation = await _repository.GetCongregationByIdAsync(request.CongregationId);
+
+        member = new(person, congregation);
+
+        member.Modify(
+            request.EntryDate,
+            request.IsBaptizedHolySpirit,
+            request.MaritalStatus,
+            request.Role,
+            request.SpouseIsBeliever,
+            request.SpouseName,
+            request.Status);
+
+        #endregion
+
+
+
         #region Persist Data
 
-        
+        try
+        {
+            await _repository.CreateAsync(member);
+        }
+        catch
+        {
+            return new BaseResponse<ResponseData>(
+                "Não foi possível salvar as informações", "16C8D89F");
+        }
 
         #endregion
         #region 04. Return success response

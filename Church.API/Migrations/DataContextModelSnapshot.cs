@@ -101,6 +101,43 @@ namespace Church.API.Migrations
                     b.ToTable("UserRole", "backoffice");
                 });
 
+            modelBuilder.Entity("Church.Contexts.AdmContext.Entities.Directorship", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte>("BoardRole")
+                        .HasColumnType("TINYINT");
+
+                    b.Property<Guid>("CongregationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(180)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CongregationId");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("Directorship", "backoffice");
+                });
+
             modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
                 {
                     b.Property<Guid>("Id")
@@ -559,6 +596,25 @@ namespace Church.API.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Church.Contexts.AdmContext.Entities.Directorship", b =>
+                {
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
+                        .WithMany()
+                        .HasForeignKey("CongregationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
+                        .WithMany()
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Congregation");
+
+                    b.Navigation("Member");
+                });
+
             modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
                 {
                     b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Address", "Address", b1 =>
@@ -704,7 +760,7 @@ namespace Church.API.Migrations
                     b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
                         .WithMany()
                         .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>

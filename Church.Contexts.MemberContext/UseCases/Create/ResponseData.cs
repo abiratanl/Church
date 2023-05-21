@@ -8,18 +8,15 @@ public class ResponseData :IResponseData
 
     public ResponseData(string message) => Message = message;
 
-    public ResponseData(string message, Request request)
-    {
-        Message = message;
-        Request = request;
-    }
+    public ResponseData(string message, Request? request)
+        => (Message, Request) = (message, request);
 
     #endregion
 
     #region Public Properties
 
     public string  Message { get; }
-    public Request Request { get; }
+    public Request? Request { get; }
 
     #endregion
 }

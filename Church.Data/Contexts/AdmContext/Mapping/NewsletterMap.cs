@@ -1,8 +1,8 @@
-﻿using Church.Contexts.MemberContext.Entities;
+﻿using Church.Contexts.AdmContext.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Church.Data.Contexts.MemberContext.Mapping
+namespace Church.Data.Contexts.AdmContext.Mapping
 {
     public class NewsletterMap : IEntityTypeConfiguration<Newsletter>
     {
@@ -17,6 +17,9 @@ namespace Church.Data.Contexts.MemberContext.Mapping
 
             #region Properties
 
+            builder.Property(n => n.EndDate)
+                .IsRequired()
+                .HasColumnType("SMALLDATETIME");
             builder.Property(n => n.EventDescription)
                 .IsRequired()
                 .HasColumnType("NVARCHAR")
@@ -30,9 +33,7 @@ namespace Church.Data.Contexts.MemberContext.Mapping
             builder.Property(n => n.StartDate)
                 .IsRequired()
                 .HasColumnType("SMALLDATETIME");
-            builder.Property(n => n.EndDate)
-                .IsRequired()
-                .HasColumnType("SMALLDATETIME");
+
             #endregion
         }
     }

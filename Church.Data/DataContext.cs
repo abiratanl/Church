@@ -5,7 +5,8 @@ using Church.Contexts.SharedContext.Entities;
 using Church.Data.Contexts.PersonContext.Mappings;
 using Church.Contexts.MemberContext.Entities;
 using Church.Data.Contexts.MemberContext.Mapping;
-using System.Reflection.Emit;
+using Church.Contexts.AdmContext.Entities;
+using Church.Data.Contexts.AdmContext.Mapping;
 
 namespace Church.Data;
 
@@ -24,6 +25,13 @@ public class DataContext : DbContext
 
     #endregion
 
+    #region Adm
+
+    public DbSet<Newsletter> Newsletters { get; set; } = null!;
+    public DbSet<Directorship> Directorships { get; set; } = null!;
+
+    #endregion
+
     #region Member
 
     public DbSet<Congregation> Congregations { get; set; } = null!;
@@ -31,7 +39,6 @@ public class DataContext : DbContext
     public DbSet<Leader> Leaders { get; set; } = null!;
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Occurrence> Occurrences { get; set; } = null!;
-    public DbSet<Newsletter> Newsletters { get; set; } = null!;
 
 
     #endregion
@@ -55,6 +62,13 @@ public class DataContext : DbContext
 
         #endregion
 
+        #region Adm
+
+        builder.ApplyConfiguration(new NewsletterMap());
+        builder.ApplyConfiguration(new DirectorshipMap());
+
+        #endregion
+
         #region Person
 
         builder.ApplyConfiguration(new PersonMap());
@@ -69,7 +83,6 @@ public class DataContext : DbContext
         builder.ApplyConfiguration(new ContactMap());
         builder.ApplyConfiguration(new OccurrenceMap());
         builder.ApplyConfiguration(new LeaderMap());
-        builder.ApplyConfiguration(new NewsletterMap());
 
         #endregion
     }

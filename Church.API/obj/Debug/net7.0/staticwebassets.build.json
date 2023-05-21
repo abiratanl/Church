@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "92tWkPZkx66bFieV+iw1/QWe5/FFhxBS1H63k43WRHI=",
+  "Hash": "Vx5jFYHXOhy5JkGxVOl3iXVN8VkAx+fKM3hZcOLlIQE=",
   "Source": "Church.API",
   "BasePath": "_content/Church.API",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "Church.Services.Google",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     }
   ],

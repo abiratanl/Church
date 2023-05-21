@@ -1426,6 +1426,22 @@
           "bin/placeholder/Church.Contexts.AccountContext.dll": {}
         }
       },
+      "Church.Contexts.AdmContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Church.Contexts.AccountContext": "1.0.0",
+          "Church.Contexts.MemberContext": "1.0.0",
+          "Church.Contexts.PersonContext": "1.0.0",
+          "Church.Contexts.SharedContext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Church.Contexts.AdmContext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Church.Contexts.AdmContext.dll": {}
+        }
+      },
       "Church.Contexts.MemberContext/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1473,6 +1489,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Church.Contexts.AccountContext": "1.0.0",
+          "Church.Contexts.AdmContext": "1.0.0",
           "Church.Contexts.MemberContext": "1.0.0",
           "Church.Contexts.PersonContext": "1.0.0",
           "Church.Contexts.SharedContext": "1.0.0",
@@ -4382,6 +4399,11 @@
       "type": "project",
       "path": "../Church.Contexts.AccountContext/Church.Contexts.AccountContext.csproj",
       "msbuildProject": "../Church.Contexts.AccountContext/Church.Contexts.AccountContext.csproj"
+    },
+    "Church.Contexts.AdmContext/1.0.0": {
+      "type": "project",
+      "path": "../Church.Contexts.AdmContext/Church.Contexts.AdmContext.csproj",
+      "msbuildProject": "../Church.Contexts.AdmContext/Church.Contexts.AdmContext.csproj"
     },
     "Church.Contexts.MemberContext/1.0.0": {
       "type": "project",

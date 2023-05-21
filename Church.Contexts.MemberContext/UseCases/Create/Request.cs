@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.UseCases;
+using Church.Contexts.MemberContext.Entities;
 
 namespace Church.Contexts.MemberContext.UseCases.Create;
 
@@ -16,5 +17,7 @@ public class Request : IRequest<BaseResponse<ResponseData>>
     public bool SpouseIsBeliever { get; set; }
     public string SpouseName { get; set; } = string.Empty;
     public EStatus Status { get; set; }
+    public List<Contact>? Contacts { get; set; }
+    public List<Occurrence>? Occurrences { get; set; }
     public string returnUrl { get; set; } = string.Empty;
 }

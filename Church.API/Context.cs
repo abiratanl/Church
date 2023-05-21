@@ -98,7 +98,27 @@ public static class Context
         services
             .AddTransient<Contexts.PersonContext.UseCases.Edit.Contracts.IRepository,
                 Data.Contexts.PersonContext.UseCases.Edit.Repository>();
-        
+
+        #endregion
+
+        #region PersonContext
+
+        services
+            .AddTransient<Contexts.MemberContext.UseCases.Create.Contracts.IRepository,
+                Data.Contexts.MemberContext.UseCases.Create.Repository>();
+
+        //services
+        //    .AddTransient<Contexts.MemberContext.UseCases.Get.Contracts.IRepository,
+        //        Data.Contexts.PersonContext.UseCases.Get.Repository>();
+
+        //services
+        //    .AddTransient<Contexts.MemberContext.UseCases.Delete.Contracts.IRepository,
+        //        Data.Contexts.MemberContext.UseCases.Delete.Repository>();
+
+        //services
+        //    .AddTransient<Contexts.MemberContext.UseCases.Edit.Contracts.IRepository,
+        //        Data.Contexts.MemberContext.UseCases.Edit.Repository>();
+
         #endregion
     }
 }

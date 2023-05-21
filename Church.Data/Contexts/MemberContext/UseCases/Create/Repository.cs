@@ -33,5 +33,8 @@ public class Repository : IRepository
         await _context.SaveChangesAsync();
     }
 
+    public async Task<Congregation> GetCongregationByIdAsync(Guid id)
+        => await _context.Congregations.FirstOrDefaultAsync(p => p.Id == id);
+
     #endregion
 }

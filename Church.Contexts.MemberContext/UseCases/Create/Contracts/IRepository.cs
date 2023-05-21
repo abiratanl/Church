@@ -11,6 +11,12 @@ public interface IRepository
     /// <param name="id"></param>
     /// <returns></returns>
     Task<Person> GetPersonByIdAsync(Guid id);
+    /// <summary>
+    /// Return a congretarion entity based in parameter passed.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task<Congregation> GetCongregationByIdAsync(Guid id);
 
     /// <summary>
     /// Verify if person exists in Members using person id.

@@ -1,6 +1,6 @@
 ﻿using Church.Contexts.SharedContext.Entities;
 
-namespace Church.Contexts.MemberContext.Entities;
+namespace Church.Contexts.AdmContext.Entities;
 
 public class Newsletter : Entity
 {
