@@ -101,23 +101,26 @@ public static class Context
 
         #endregion
 
-        #region PersonContext
+        #region MemberContext
 
         services
             .AddTransient<Contexts.MemberContext.UseCases.Create.Contracts.IRepository,
                 Data.Contexts.MemberContext.UseCases.Create.Repository>();
+        services
+            .AddTransient<Contexts.MemberContext.UseCases.Create.Contracts.IRepositoryCongregation,
+                Data.Contexts.MemberContext.UseCases.Create.RepositoryCongregation>();
 
-        //services
-        //    .AddTransient<Contexts.MemberContext.UseCases.Get.Contracts.IRepository,
-        //        Data.Contexts.PersonContext.UseCases.Get.Repository>();
+        services
+            .AddTransient<Contexts.MemberContext.UseCases.Get.Contracts.IRepository,
+                Data.Contexts.MemberContext.UseCases.Get.Repository>();
 
-        //services
-        //    .AddTransient<Contexts.MemberContext.UseCases.Delete.Contracts.IRepository,
-        //        Data.Contexts.MemberContext.UseCases.Delete.Repository>();
+        services
+            .AddTransient<Contexts.MemberContext.UseCases.Delete.Contracts.IRepository,
+                Data.Contexts.MemberContext.UseCases.Delete.Repository>();
 
-        //services
-        //    .AddTransient<Contexts.MemberContext.UseCases.Edit.Contracts.IRepository,
-        //        Data.Contexts.MemberContext.UseCases.Edit.Repository>();
+        services
+            .AddTransient<Contexts.MemberContext.UseCases.Edit.Contracts.IRepository,
+                Data.Contexts.MemberContext.UseCases.Edit.Repository>();
 
         #endregion
     }

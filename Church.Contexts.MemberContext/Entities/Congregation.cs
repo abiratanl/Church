@@ -36,7 +36,7 @@ public class Congregation : Entity
 
     public Address Address { get; private set; } = null!;
     public List<Contact?> Contacts { get; private set; } = new List<Contact?>();
-    public DateTime EndDate { get; private set; }
+    public DateTime? EndDate { get; private set; }
     public DateTime? FundationDate { get; private set; } = null!;
     public bool IsDeleted { get; private set; }
     public string Name { get; private set; } = String.Empty;

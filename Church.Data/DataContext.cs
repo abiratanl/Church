@@ -26,9 +26,10 @@ public class DataContext : DbContext
     #endregion
 
     #region Adm
-
-    public DbSet<Newsletter> Newsletters { get; set; } = null!;
+    
     public DbSet<Directorship> Directorships { get; set; } = null!;
+    public DbSet<Leader> Leaders { get; set; } = null!;
+    public DbSet<Newsletter> Newsletters { get; set; } = null!;
 
     #endregion
 
@@ -36,10 +37,8 @@ public class DataContext : DbContext
 
     public DbSet<Congregation> Congregations { get; set; } = null!;
     public DbSet<Member> Members { get; set; } = null!;
-    public DbSet<Leader> Leaders { get; set; } = null!;
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Occurrence> Occurrences { get; set; } = null!;
-
 
     #endregion
 

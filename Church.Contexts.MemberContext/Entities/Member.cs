@@ -63,6 +63,9 @@ public class Member : Entity
 
     #region Public Methods
 
+    public void PushPerson(Person person) => Person= person;
+    public void PushCongregation(Congregation congregation) => Congregation= congregation;
+
     public void Modify(
     DateTime entryDate,
     bool isBaptizedHolySpirit,

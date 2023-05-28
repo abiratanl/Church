@@ -1,4 +1,4 @@
-﻿using Church.Contexts.MemberContext.Entities;
+﻿using Church.Contexts.AdmContext.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -60,8 +60,10 @@ public class CongregationMap : IEntityTypeConfiguration<Congregation>
             .HasColumnName("Complement")
             .HasColumnType("NVARCHAR");
         builder.Property(c => c.EndDate)
+            .IsRequired(false)
             .HasColumnType("SMALLDATETIME");
         builder.Property(c => c.FundationDate)
+            .IsRequired(false)
             .HasColumnType("SMALLDATETIME");
         builder.Property(c => c.IsDeleted)
             .IsRequired()

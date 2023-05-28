@@ -1,6 +1,6 @@
 ﻿namespace Church.Contexts.MemberContext.UseCases.Get.Contracts;
 
-public interface Repository
+public interface IRepository
 {
     
 }

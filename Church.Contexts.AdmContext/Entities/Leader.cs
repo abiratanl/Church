@@ -1,7 +1,8 @@
-﻿using Church.Contexts.SharedContext.Entities;
+﻿using Church.Contexts.MemberContext.Entities;
+using Church.Contexts.SharedContext.Entities;
 using Church.Contexts.SharedContext.ValueObjects;
 
-namespace Church.Contexts.MemberContext.Entities;
+namespace Church.Contexts.AdmContext.Entities;
 
 public class Leader : Entity
 {
