@@ -34,48 +34,74 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
     {
         #region 01. Create Aggregate Root
 
-        Member member = new();
+        Congregation congregation = new();
 
         #endregion
 
-        #region 02. Check if member exists
+        #region 02. Check if congregation exists
 
-        var result = await _repository.CheckMemberExistsByPersonIdAsync(request.PersonId);
+        var result = await _repository.CheckCongregarionExistsByNameAsync(request.Name);
         if (result)
         {
             await _logService.LogAsync(
                 ELogType.LocalException,
-                "👤 Membro já cadastrado.",
+                "👤 Congregação já cadastrada.",
                 "04564D20", null);
         }
 
         #endregion
 
-        #region Populate Aggregate Root
-
-        var person = await _repository.GetPersonByIdAsync(request.PersonId);
-        var congregation = new Congregation();
-        congregation = await _repository.GetCongregationByIdAsync(request.CongregationId);       
-        member.PushCongregation(congregation);
-        member.PushPerson(person);
-        member.Modify(
-            request.EntryDate,
-            request.IsBaptizedHolySpirit,
-            request.MaritalStatus,
-            request.Role,
-            request.SpouseIsBeliever,
-            request.SpouseName,
-            request.Status);
+        #region 03. Populate Aggregate Root
+        
+        congregation.Modify(
+            request.EndDate,
+            request.FundationDate,
+            request.Name);
 
         #endregion
-
         
+        #region 04.  Check if address is empty
 
-        #region Persist Data
+        if(string.IsNullOrEmpty(request.Street) && string.IsNullOrEmpty(request.District))
+            return new BaseResponse<ResponseData>(new ResponseData("", request), 201);
+
+        #endregion
+        
+        #region 05. Attach address
 
         try
         {
-            await _repository.CreateAsync(member);
+            Address address = new(
+                request.ZipCode,
+                request.Street,
+                request.AddressNumber,
+                request.District,
+                request.City,
+                request.State,
+                request.Country,
+                request.Complement,
+                request.Code,
+                request.Notes);
+
+            congregation.ChangeAddress(address);
+        }
+        catch
+        {
+            return new BaseResponse<ResponseData>("Não foi possível salvar o endereço.", "f00467f2");
+        }
+
+        #endregion    
+        
+        #region 06. Attach Contacts
+        
+        List<Contact> contacts = new(Request.Contacts);
+        congregation.ChangeContacts(contacts);
+        
+        #region 07. Persist Data
+
+        try
+        {
+            await _repository.CreateAsync(congregation);
         }
         catch
         {
@@ -84,7 +110,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
         }
 
         #endregion
-        #region 04. Return success response
+        #region 08. Return success response
 
         return new BaseResponse<ResponseData>(
             new ResponseData(
