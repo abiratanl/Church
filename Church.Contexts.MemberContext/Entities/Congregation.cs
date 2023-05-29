@@ -15,15 +15,13 @@ public class Congregation : Entity
         List<Contact?> contacts, 
         DateTime endDate, 
         DateTime? fundationDate, 
-        string name, 
-        List<Member?> members)
+        string name)
     {
         Address = address;
         Contacts = contacts;
         EndDate = endDate;
         FundationDate = fundationDate;
         Name = name;
-        Members = members;
         Tracker = new Tracker("Criação do cadastro da congregação.");
     }
 
@@ -47,24 +45,20 @@ public class Congregation : Entity
 
     #region Public Methods
     public void Modify(
-        Address address,
-        List<Contact?> contacts,
         DateTime endDate,
         DateTime? fundationDate,
-        string name,
-        List<Member?> members)
-    {
-        Address = address;
-        Contacts = contacts;
+        string name)
+    {   
         EndDate = endDate;
         FundationDate = fundationDate;
         Name = name;
-        Members = members;
         Tracker.Update("Informações atualizadas.");
     }
 
     public void ChangeAddress(Address address) => Address = address;
-
+    
+    public void ChangeContacts(List<Contact> contacts) => Contacts = contacts;
+    
     public void Delete()
     {
         IsDeleted = true;
