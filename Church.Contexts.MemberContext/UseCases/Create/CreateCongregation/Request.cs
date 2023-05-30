@@ -3,7 +3,7 @@ using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.UseCases;
 using Church.Contexts.MemberContext.Entities;
 
-namespace Church.Contexts.MemberContext.UseCases.Create.Congregation;
+namespace Church.Contexts.MemberContext.UseCases.Create.CreateCongregation;
 
 public class Request : IRequest<BaseResponse<ResponseData>>
 {
@@ -21,10 +21,10 @@ public class Request : IRequest<BaseResponse<ResponseData>>
     public string Notes { get; set; } = string.Empty;
 
     #endregion
-
-    public List<Contact?> Contacts { get; private set; } = new List<Contact?>();
-    public DateTime EndDate { get; private set; }
-    public DateTime? FundationDate { get; private set; } = null!;
-    public bool IsDeleted { get; private set; }
-    public string Name { get; private set; } = String.Empty;
+        
+    public DateTime EndDate { get; set; }
+    public DateTime? FundationDate { get; set; } = null!;
+    public string Name { get; set; } = String.Empty;
+    public List<Contact>? Contacts { get; set; } = new List<Contact>();
+    public string returnUrl { get; set; } = string.Empty;
 }

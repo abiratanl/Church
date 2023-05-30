@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Church.Contexts.SharedContext.UseCases;
 using UCCreate = Church.Contexts.MemberContext.UseCases.Create;
+using UCCreateCong = Church.Contexts.MemberContext.UseCases.Create.CreateCongregation;
 using UCDelete = Church.Contexts.MemberContext.UseCases.Delete;
 using UCEdit = Church.Contexts.MemberContext.UseCases.Edit;
 using UCGet = Church.Contexts.MemberContext.UseCases.Get;

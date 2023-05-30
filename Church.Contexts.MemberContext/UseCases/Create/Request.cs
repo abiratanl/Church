@@ -2,6 +2,7 @@
 using Church.Contexts.SharedContext.Enums;
 using Church.Contexts.SharedContext.UseCases;
 using Church.Contexts.MemberContext.Entities;
+using Church.Contexts.MemberContext.UseCases.Create.CreateCongregation;
 
 namespace Church.Contexts.MemberContext.UseCases.Create;
 

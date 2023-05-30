@@ -1,6 +1,6 @@
 ﻿using Church.Contexts.SharedContext.UseCases.Contracts;
 
-namespace Church.Contexts.MemberContext.UseCases.Create.Congregation;
+namespace Church.Contexts.MemberContext.UseCases.Create.CreateCongregation;
 
 public class ResponseData :IResponseData
 {

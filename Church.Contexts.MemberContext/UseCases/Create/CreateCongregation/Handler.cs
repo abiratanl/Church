@@ -4,15 +4,16 @@ using Church.Contexts.MemberContext.UseCases.Create.Contracts;
 using Church.Contexts.SharedContext.Enums;
 using LogService = Church.Contexts.SharedContext.Services.Log.Contracts.IService;
 using MediatR;
+using Church.Contexts.SharedContext.ValueObjects;
 
-namespace Church.Contexts.MemberContext.UseCases.Create;
+namespace Church.Contexts.MemberContext.UseCases.Create.CreateCongregation;
 
 public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 {
     #region Private Properties
 
     private readonly LogService _logService;
-    private readonly IRepository _repository;
+    private readonly IRepositoryCongregation _repository;
     
     #endregion
 
@@ -20,7 +21,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 
     public Handler(
         LogService logService,
-        IRepository repository)
+        IRepositoryCongregation repository)
     {
         _logService = logService;
         _repository = repository;
@@ -40,7 +41,7 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 
         #region 02. Check if congregation exists
 
-        var result = await _repository.CheckCongregarionExistsByNameAsync(request.Name);
+        var result = await _repository.CheckCongregationExistsByNameAsync(request.Name);
         if (result)
         {
             await _logService.LogAsync(
@@ -94,8 +95,8 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
         
         #region 06. Attach Contacts
         
-        List<Contact> contacts = new(Request.Contacts);
-        congregation.ChangeContacts(contacts);
+        //List<Contact?> contacts = new(request.Contacts);
+        //congregation.ChangeContacts(contacts);
         
         #region 07. Persist Data
 
@@ -110,11 +111,12 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
         }
 
         #endregion
+
         #region 08. Return success response
 
         return new BaseResponse<ResponseData>(
             new ResponseData(
-                $"{member.Person.Name} - Cadastro efetuado com sucesso!"),
+                $"{congregation.Name} - Cadastro efetuado com sucesso!"),
             201);
 
         #endregion
@@ -122,4 +124,5 @@ public class Handler : IRequestHandler<Request, BaseResponse<ResponseData>>
 
     #endregion
 
+    #endregion
 }

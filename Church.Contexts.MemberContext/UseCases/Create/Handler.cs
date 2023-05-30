@@ -4,6 +4,7 @@ using Church.Contexts.MemberContext.UseCases.Create.Contracts;
 using Church.Contexts.SharedContext.Enums;
 using LogService = Church.Contexts.SharedContext.Services.Log.Contracts.IService;
 using MediatR;
+using Church.Contexts.MemberContext.UseCases.Create;
 
 namespace Church.Contexts.MemberContext.UseCases.Create;
 

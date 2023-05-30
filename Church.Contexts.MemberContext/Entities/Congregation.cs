@@ -57,7 +57,7 @@ public class Congregation : Entity
 
     public void ChangeAddress(Address address) => Address = address;
     
-    public void ChangeContacts(List<Contact> contacts) => Contacts = contacts;
+    public void ChangeContacts(List<Contact?> contacts) => Contacts = contacts;
     
     public void Delete()
     {
