@@ -1,3 +1,8 @@
+C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.csproj.AssemblyReference.cache
+C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.AssemblyInfoInputs.cache
+C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.AssemblyInfo.cs
+C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.csproj.CoreCompileInputs.cache
 C:\dev\Church\Church.Contexts.AdmContext\bin\Debug\net7.0\Church.Services.Google.deps.json
 C:\dev\Church\Church.Contexts.AdmContext\bin\Debug\net7.0\Church.Services.Google.runtimeconfig.json
 C:\dev\Church\Church.Contexts.AdmContext\bin\Debug\net7.0\appsettings.Development.json
@@ -16,11 +21,6 @@ C:\dev\Church\Church.Contexts.AdmContext\bin\Debug\net7.0\Church.Contexts.Member
 C:\dev\Church\Church.Contexts.AdmContext\bin\Debug\net7.0\Church.Contexts.PersonContext.pdb
 C:\dev\Church\Church.Contexts.AdmContext\bin\Debug\net7.0\Church.Contexts.SharedContext.pdb
 C:\dev\Church\Church.Contexts.AdmContext\bin\Debug\net7.0\Church.Services.Google.pdb
-C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.csproj.AssemblyReference.cache
-C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.GeneratedMSBuildEditorConfig.editorconfig
-C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.AssemblyInfoInputs.cache
-C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.AssemblyInfo.cs
-C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.csproj.CoreCompileInputs.cache
 C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.csproj.CopyComplete
 C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\Church.Contexts.AdmContext.dll
 C:\dev\Church\Church.Contexts.AdmContext\obj\Debug\net7.0\refint\Church.Contexts.AdmContext.dll

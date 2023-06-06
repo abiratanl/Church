@@ -9,48 +9,48 @@ public class Newsletter : Entity
     public Newsletter() { }
 
     public Newsletter(
+        DateTime endDate,
         string eventDescription,
-        TimeSpan eventTime,
+        string eventTime,
         string eventLocal,
         bool isDeleted,
-        DateTime startDate,
-        DateTime endDate)
+        DateTime startDate)
     {
+        EndDate = endDate;
         EventDescription = eventDescription;
         EventTime = eventTime;
         EventLocal = eventLocal;
         IsDeleted = isDeleted;
         StartDate = startDate;
-        EndDate = endDate;
     }
 
     #endregion
 
     #region Public Properties
-
+    
+    public DateTime EndDate { get; private set; }
     public string EventDescription { get; private set; } = null!;
-    public TimeSpan EventTime { get; private set; }
     public string EventLocal { get; private set; } = string.Empty;
+    public string EventTime { get; private set; }
     public bool IsDeleted { get; set; } = false;
     public DateTime StartDate { get; private set; }
-    public DateTime EndDate { get; private set; }
 
     #endregion
 
     #region Public Methods
 
     public void Modify(
+        DateTime endDate,
         string eventDescription,
-        TimeSpan eventTime,
         string eventLocal,
-        DateTime startDate,
-        DateTime endDate)
+        string eventTime,
+        DateTime startDate)
     {
-        EventDescription = eventDescription;
-        EventTime = eventTime;
-        EventLocal = eventLocal;
-        StartDate = startDate;
         EndDate = endDate;
+        EventDescription = eventDescription;
+        EventLocal = eventLocal;
+        EventTime = eventTime;
+        StartDate = startDate;
     }
 
     public void Delete() => IsDeleted = true;

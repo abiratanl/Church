@@ -138,13 +138,81 @@ namespace Church.API.Migrations
                     b.ToTable("Directorship", "backoffice");
                 });
 
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
+            modelBuilder.Entity("Church.Contexts.AdmContext.Entities.Leader", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CongregationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("Datetime");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<Guid>("MemberId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Notes")
+                        .HasMaxLength(180)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("Datetime");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CongregationId");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("Leader", "backoffice");
+                });
+
+            modelBuilder.Entity("Church.Contexts.AdmContext.Entities.Newsletter", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("EndDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.Property<string>("EventDescription")
+                        .IsRequired()
+                        .HasMaxLength(180)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<string>("EventLocal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EventTime")
+                        .IsRequired()
+                        .HasMaxLength(180)
+                        .HasColumnType("NVARCHAR");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("BIT");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("SMALLDATETIME");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Newsletter", "backoffice");
+                });
+
+            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("EndDate")
                         .HasColumnType("SMALLDATETIME");
 
                     b.Property<DateTime?>("FundationDate")
@@ -195,40 +263,6 @@ namespace Church.API.Migrations
                     b.ToTable("Contact", "backoffice");
                 });
 
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CongregationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("Datetime");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("BIT");
-
-                    b.Property<Guid>("MemberId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Notes")
-                        .HasMaxLength(180)
-                        .HasColumnType("NVARCHAR");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("Datetime");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CongregationId");
-
-                    b.HasIndex("MemberId");
-
-                    b.ToTable("Leader", "backoffice");
-                });
-
             modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Member", b =>
                 {
                     b.Property<Guid>("Id")
@@ -273,38 +307,6 @@ namespace Church.API.Migrations
                     b.HasIndex("PersonId");
 
                     b.ToTable("Member", "backoffice");
-                });
-
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Newsletter", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("SMALLDATETIME");
-
-                    b.Property<string>("EventDescription")
-                        .IsRequired()
-                        .HasMaxLength(180)
-                        .HasColumnType("NVARCHAR");
-
-                    b.Property<string>("EventLocal")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeSpan>("EventTime")
-                        .HasColumnType("time");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("BIT");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("SMALLDATETIME");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Newsletter", "backoffice");
                 });
 
             modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Occurrence", b =>
@@ -615,6 +617,52 @@ namespace Church.API.Migrations
                     b.Navigation("Member");
                 });
 
+            modelBuilder.Entity("Church.Contexts.AdmContext.Entities.Leader", b =>
+                {
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
+                        .WithMany()
+                        .HasForeignKey("CongregationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
+                        .WithMany()
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
+                        {
+                            b1.Property<Guid>("LeaderId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<DateTime>("CreatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.Property<string>("Notes")
+                                .IsRequired()
+                                .HasMaxLength(160)
+                                .HasColumnType("NVARCHAR");
+
+                            b1.Property<DateTime>("UpdatedAt")
+                                .HasColumnType("SMALLDATETIME");
+
+                            b1.HasKey("LeaderId");
+
+                            b1.ToTable("Leader", "backoffice");
+
+                            b1.WithOwner()
+                                .HasForeignKey("LeaderId");
+                        });
+
+                    b.Navigation("Congregation");
+
+                    b.Navigation("Member");
+
+                    b.Navigation("Tracker")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Congregation", b =>
                 {
                     b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Address", "Address", b1 =>
@@ -739,52 +787,6 @@ namespace Church.API.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("ContactId");
-                        });
-
-                    b.Navigation("Congregation");
-
-                    b.Navigation("Member");
-
-                    b.Navigation("Tracker")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Church.Contexts.MemberContext.Entities.Leader", b =>
-                {
-                    b.HasOne("Church.Contexts.MemberContext.Entities.Congregation", "Congregation")
-                        .WithMany()
-                        .HasForeignKey("CongregationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Church.Contexts.MemberContext.Entities.Member", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.OwnsOne("Church.Contexts.SharedContext.ValueObjects.Tracker", "Tracker", b1 =>
-                        {
-                            b1.Property<Guid>("LeaderId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<DateTime>("CreatedAt")
-                                .HasColumnType("SMALLDATETIME");
-
-                            b1.Property<string>("Notes")
-                                .IsRequired()
-                                .HasMaxLength(160)
-                                .HasColumnType("NVARCHAR");
-
-                            b1.Property<DateTime>("UpdatedAt")
-                                .HasColumnType("SMALLDATETIME");
-
-                            b1.HasKey("LeaderId");
-
-                            b1.ToTable("Leader", "backoffice");
-
-                            b1.WithOwner()
-                                .HasForeignKey("LeaderId");
                         });
 
                     b.Navigation("Congregation");

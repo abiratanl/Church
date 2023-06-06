@@ -21,7 +21,7 @@ public class RepositoryCongregation : IRepositoryCongregation
 
     #region Public Methods
 
-    public async  Task<Congregation> GetCongregationByIdAsync(Guid id)
+    public async  Task<Congregation?> GetCongregationByIdAsync(Guid id)
         => await _context.Congregations.FirstOrDefaultAsync(c => c.Id == id);
 
     public async Task<bool> CheckCongregationExistsByNameAsync(string name)

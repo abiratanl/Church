@@ -10,7 +10,7 @@ public interface IRepositoryCongregation
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    Task<Congregation> GetCongregationByIdAsync(Guid id);
+    Task<Congregation?> GetCongregationByIdAsync(Guid id);
 
     /// <summary>
     /// Verify if congregation exists in Congregations using name.

@@ -4443,7 +4443,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abilo\\.nuget\\packages\\": {}
+    "C:\\Users\\abira\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4451,11 +4452,15 @@
       "projectUniqueName": "C:\\dev\\Church\\Church.API\\Church.API.csproj",
       "projectName": "Church.API",
       "projectPath": "C:\\dev\\Church\\Church.API\\Church.API.csproj",
-      "packagesPath": "C:\\Users\\abilo\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\abira\\.nuget\\packages\\",
       "outputPath": "C:\\dev\\Church\\Church.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\abilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4463,6 +4468,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4528,7 +4534,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

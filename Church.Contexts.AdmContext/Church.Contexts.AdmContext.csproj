@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <Folder Include="UseCases\" />
+    <Folder Include="UseCases\CreateDirectorship" />
+    <Folder Include="UseCases\CreateLeader" />
+    <Folder Include="UseCases\ModifyNewsletter" />
   </ItemGroup>
 
   <ItemGroup>

@@ -26,7 +26,8 @@ namespace Church.Data.Contexts.AdmContext.Mapping
                 .HasMaxLength(180);
             builder.Property(n => n.EventTime)
                 .IsRequired()
-                .HasColumnType("time");
+                .HasColumnType("NVARCHAR")
+                .HasMaxLength(180);
             builder.Property(n => n.IsDeleted)
                 .IsRequired()
                 .HasColumnType("BIT");

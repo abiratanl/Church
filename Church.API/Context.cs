@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Church.Contexts.AccountContext.UseCases.Create;
 using Church.Contexts.AccountContext.UseCases.Create.Contracts;
+using Church.Contexts.AdmContext.UseCases.CreateNewsletter.Contracts;
 using Church.Contexts.SharedContext;
 using Church.Data;
 using Church.Data.Contexts.AccountContext.UseCases.Create;
+using Church.Data.Contexts.AdmContext.UseCases.CreateNewsletter;
 
 namespace Church.API;
 
@@ -22,7 +24,7 @@ public static class Context
 
     public static void ConfigureServices(IServiceCollection services)
     {
-        services.AddTransient<IRepository, Repository>();
+       // services.AddTransient<IRepository, Repository>();
         services.AddTransient<IService, Service>();
 
         #region AccountContext
@@ -66,7 +68,10 @@ public static class Context
         services
             .AddTransient<Contexts.AccountContext.UseCases.VerifyPhone.Contracts.IRepository,
                 Data.Contexts.AccountContext.UseCases.VerifyPhone.Repository>();
-
+        
+        services
+            .AddTransient<Contexts.AccountContext.UseCases.Create.Contracts.IRepository,
+                Data.Contexts.AccountContext.UseCases.Create.Repository>();
         services
             .AddTransient<Contexts.AccountContext.UseCases.Edit.Contracts.IRepository,
                 Data.Contexts.AccountContext.UseCases.Edit.Repository>();
@@ -122,6 +127,22 @@ public static class Context
             .AddTransient<Contexts.MemberContext.UseCases.Edit.Contracts.IRepository,
                 Data.Contexts.MemberContext.UseCases.Edit.Repository>();
 
+        #endregion
+        
+        #region AdmContext_Newsletter
+
+        services
+            .AddTransient<Contexts.AdmContext.UseCases.CreateNewsletter.Contracts.IRepository,
+                Data.Contexts.AdmContext.UseCases.CreateNewsletter.Repository>();
+        
+        services
+            .AddTransient<Contexts.AdmContext.UseCases.DeleteNewsletter.Contracts.IRepository,
+                Data.Contexts.AdmContext.UseCases.DeleteNewsletter.Repository>();
+        
+        services
+            .AddTransient<Contexts.AdmContext.UseCases.GetNewsletter.Contracts.IRepository,
+                Data.Contexts.AdmContext.UseCases.GetNewsletter.Repository>();
+        
         #endregion
     }
 }

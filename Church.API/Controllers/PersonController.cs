@@ -83,9 +83,9 @@ public class PersonController : ControllerBase
             var result = await _mediator.Send(new UCEdit.Request(){Id = id});
             return result;
         }
-        catch (Exception e)
+        catch (Exception exception)
         {
-            return new BaseResponse<UCEdit.ResponseData>(e.Message, "BF270861", 400);
+            return new BaseResponse<UCEdit.ResponseData>(exception.Message, "BF270861", 400);
         }
     }
 }
